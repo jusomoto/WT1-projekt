@@ -1,0 +1,19 @@
+{
+  "name": "be-a-mineonaire",
+  "version": "1.0.0",
+  "description": "Game for WT1",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Blackscr33n/WT1-projekt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Blackscr33n/WT1-projekt/issues"
+  },
+  "homepage": "https://github.com/Blackscr33n/WT1-projekt#readme"
+}
