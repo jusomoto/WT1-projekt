@@ -34,3 +34,10 @@ Paperclip erreicht mit einfachen Mitteln doch einiges, im Sinne von „Weniger i
 ## Designkonzept
 
 ## Meilensteinplan
+
+| #        | Name          | Datum         | 
+|:--------:|:-------------:|:-------------:|
+| 1.1      | Projektstart       | 4.12.17  |
+| 1.2      | Projekt-setup      | 5.12.17  |
+| 1.3      | Design: Layout     | 10.12.17 |
+| 1.3      | Design: Layout     | 10.12.17 |
