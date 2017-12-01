@@ -10,7 +10,7 @@
 ## Einleitung
 
 ## Erfahrung aus Paperclip
-###Positive Eindrücke und Einflüsse
+### Positive Eindrücke und Einflüsse
 Paperclip ist im Großen und Ganzen ein Click &amp; Wait Spiel, eine Idee, die wir auch in unserem Spiel
 verwenden wollten. Zuerst müssen die Büroklammern händisch hergestellt werden, anschließend kann die Produktion gesteigert und automatisiert werden um im Endeffekt noch produktiver zu werden und schneller sein Ziel zu erreichen. Schnell dreht sich in Paperclip jedoch nicht mehr alles nur um Papierklammern, es kommt der Aktienmarkt ins Spiel, in einem kasinoähnlichen Modus kann Glückspiel betrieben werden, Drohnen können gebaut werden und schließlich die ganze Galaxie erforscht werden.
 Obwohl die Grundidee von Paper Clip sehr simple ist, hat es trotzdem großen Spaß gemacht die verschiedenen Möglichkeiten zu erforschen. Es war doch sehr interessant zu sehen was mit einfachen Mitteln alles möglich ist. Beim Beginn des Spiels weiß man nicht wirklich worauf man sich einlässt, was einen erwarten wird, so muss man durch ausprobieren und herumklicken, eine gute Strategie finden. Eine ähnliche Grundidee wollten wir also schnell auch in unser Spiel bringen.
@@ -19,7 +19,7 @@ Dazu stellten wir uns folgende Fragen?
 - Welches Thema ist aktuell?
 - Wie kann man diese Themen in ein Browsergame bringen?
 
-###Negative Eindrücke:
+### Negative Eindrücke:
 
 Das Design von Paperclip, ist wohl auch bewusst eher einfach gehalten, dadurch wirkt das Spiel designtechnisch schnell ausladend. 
 Es zählt wie so oft der erste Eindruck, ein paar gezielt eingesetzte
@@ -28,7 +28,7 @@ Paperclip verliert sehr schnell den Hang zur Realität und wird stark überzeich
 Weiters wäre eine Art Geschichte im Spiel interessant gewesen, um sich mit dem gespielten Charakter (Leiter einer Papierklammerfabrik?) identifizieren zu können.
 Dem Spiel fehlt auch der Wettbewerb, interessant wäre zum Beispiel eine Rangliste, in der man seine Leistungen mit anderen Spielern weltweit vergleichen kann. Denkbar wäre hier folgendes Szenario:
 Wer schafft es als erster 1 Milliarde Paperclips zu erzeugen?
-###Fazit
+### Fazit
 Paperclip erreicht mit einfachen Mitteln doch einiges, im Sinne von „Weniger ist mehr“. Obwohl es doch sehr überzeichnet ist, macht es Spaß herauszufinden wohin die Reise gehen wird, wenn man erstmal beginnt Büroklammern herzustellen.
 
 ## Designkonzept
