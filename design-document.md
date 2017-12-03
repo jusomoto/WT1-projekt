@@ -11,7 +11,12 @@
 
 ## Einleitung
 
-Das Spiel "Be a Mineonaire" handelt um die Erzeugung von Bitcoins und dessen sich stetig veränderten Kurs. Der Spieler wird mit einem einzigen Gerät starten und wird so, seine ersten Bitcoins minen. Durch diese Erträge ist der Spieler in der Lage sich neue bessere Hardware zu leisten oder seine bestehende Hardware upzugraden.
+### Grundkonzept
+Das Spiel "Be a Mineonaire" handelt um die Erzeugung von Bitcoins und dessen sich stetig veränderten Kurs. Der Spieler wird mit einem einzigen Gerät starten und wird so, seine ersten Bitcoins minen. Durch diese Erträge ist der Spieler in der Lage sich neue bessere Hardware zu leisten oder seine bestehende Hardware upzugraden. Der Spieler wird durch Events im Spiel die zufällig auftreten auf Laune gehalten. Beispiele wären hier: ein Crash des Kurses oder Investitionsmöglichkeiten in innovative Ideen. Dies dient einerseits dazu, dem Spieler bei jeder Runde einen anderen Spielverlauf zu ermöglichen.
+
+### Ziel
+
+Ziel des Spieles ist es, in möglichst kürzerster Zeit 1 Million Dollar zu verdienen. Dies kann auf unterschiedlichster Möglichkeit und nicht alleine durch Mining erzielt werden.
 
 <a name="experience"></a>
 
@@ -54,7 +59,17 @@ Bei unserem Design ist es uns wichtig, dass der User nicht mit zu vielen Informa
 
 | #        | Name          | Datum         | 
 |:--------:|:-------------:|:-------------:|
-| 1.1      | Projektstart       | 4.12.17  |
-| 1.2      | Projekt-setup      | 5.12.17  |
-| 1.3      | Design: Layout     | 10.12.17 |
-| 1.3      | Design: Layout     | 10.12.17 |
+| 1.1      | Projektstart| 6.12.17  |
+| 1.2      | Projekt-setup| 10.12.17  |
+| 2.1      | Design: endgültiges Layout| 15.12.17 |
+| 2.2      | Design: Gestaltung| 26.12.17 |
+| 2.3      | Design: Animationen| 31.12.17 |
+| 3.1      | Functional: Algorithmus "zufällige" Events| 15.12.17 |
+| 3.2      | Functional: Zeitablauf| 17.12.17 |
+| 3.3      | Functional: Eventslistener| 22.12.17 |
+| 3.4      | Functional: lokale Datenbank| 20.12.17 |
+| 3.5      | Functional: Mining Earnings & Hardware| 28.12.17 |
+| 3.6      | Functional: Algorithmus Kursentwicklung| 10.12.17 |
+| 4.1      | Testing: abgeschlossen | 08.01.17 |
+| 4.2      | Testing: gefundene Bugs behoben | 15.01.17 |
+| 5.1      | Ende: Projektabschluss & Abgabe | 24.01.18 |
