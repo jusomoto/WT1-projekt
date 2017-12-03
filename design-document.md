@@ -14,9 +14,31 @@
 ### Grundkonzept
 Das Spiel "Be a Mineonaire" handelt um die Erzeugung von Bitcoins und dessen sich stetig veränderten Kurs. Der Spieler wird mit einem einzigen Gerät starten und wird so, seine ersten Bitcoins minen. Durch diese Erträge ist der Spieler in der Lage sich neue bessere Hardware zu leisten oder seine bestehende Hardware upzugraden. Der Spieler wird durch Events im Spiel die zufällig auftreten auf Laune gehalten. Beispiele wären hier: ein Crash des Kurses oder Investitionsmöglichkeiten in innovative Ideen. Dies dient einerseits dazu, dem Spieler bei jeder Runde einen anderen Spielverlauf zu ermöglichen.
 
+### Start
+
+Man beginnt mit einem PC, dadurch verdient man Bitcoins und kann weitere Hardware oder Upgrades kaufen.
+Als Story wäre angedacht, das man als Student auf einer technischen Fachhochschule ist
+und dort erstmals mit dem Bitcoin in Berührung kommt und man sich entschließt Bitcoins zu minen.
+
+### Verlauf des Spiels
+
+- der Kurs vom Bitcoin verändert sich alle 30 Sekunden und beginnt bei einem geringen Wert.
+- Im Laufe des Spiels muss der Spieler ebenso seine Rechnungen für Miete & Strom quartalsweise bezahlen. 
+- Hier kann es zu privaten Events kommen wie einem Autounfall oder unvorhergesehene Ausgaben. 
+- Das Spiel startet 2017 und läuft bis 2041
+- Upgrades erzeugen mehr BTC/Sekunde
+- Upgrades & Neuerwerbungen erhöhen die Rechnungen
+- News Feed für vergangene Ereignisse
+
+
 ### Ziel
 
-Ziel des Spieles ist es, in möglichst kürzerster Zeit 1 Million Dollar zu verdienen. Dies kann auf unterschiedlichster Möglichkeit und nicht alleine durch Mining erzielt werden.
+Ziel des Spieles ist es, in möglichst kürzerster Zeit 1 Million Dollar zu verdienen. Dies kann auf unterschiedlichster Möglichkeit und nicht alleine durch Mining erzielt werden. Die Zeit bis dorthin wird gespeichert und in die Rangliste eingetragen.
+Ist das Jahr 2041 erreicht endet das Spiel automatisch.
+
+### frühzeitiger Spielabbruch
+
+Das Spiel ist vorzeitig vorbei, wenn der Spieler 0 USD & 0 BTC besitzt.
 
 <a name="experience"></a>
 
