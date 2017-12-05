@@ -1,0 +1,8 @@
+{
+    "hardware": [
+        { "name": "PC", "price": 1000, "currency": "USD", "miningEarnings": "0.03", "upgradeEarnings": "0.02" },
+        { "name": "AntMiner", "price": 5000, "currency": "USD", "miningEarnings": "0.1", "upgradeEarnings": "0.07" },
+        { "name": "Server", "price": 10000, "currency": "USD", "miningEarnings": "0.4", "upgradeEarnings": "0.1" },
+        { "name": "Serverfarm", "price": 20000, "currency": "USD", "miningEarnings": "0.9", "upgradeEarnings": "0.2" }
+    ]
+}

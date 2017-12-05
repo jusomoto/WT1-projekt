@@ -12,6 +12,7 @@ gulp.task('webpack', function() {
   return gulp.src(['src/js/*.js', 'src/js/**/*.js'])
     .pipe(webpackStream({
         entry: './src/js/script.js',
+        devtool: 'source-map',
         output: {
           filename: 'bundle.min.js',
           path: path.resolve(__dirname, 'dist')
@@ -21,6 +22,11 @@ gulp.task('webpack', function() {
         ]
     }))
     .pipe(gulp.dest('dist/'));
+});
+
+gulp.task("copy-json", function() {
+    return gulp.src('./resources/data/*.json')
+    .pipe(gulp.dest('./dist/data'));
 });
 
 gulp.task("webpack-dev-server", function(callback) {
@@ -57,4 +63,4 @@ gulp.task('image', function () {
         .pipe(gulp.dest('./dist/img'));
 });
 
-gulp.task('default', [ 'webpack', 'css', 'image', 'webpack-dev-server' ]);
+gulp.task('default', [ 'copy-json', 'webpack', 'css', 'image', 'webpack-dev-server' ]);
