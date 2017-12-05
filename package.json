@@ -4,7 +4,8 @@
   "description": "Game for WT1",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/Blackscr33n/WT1-projekt/issues"
   },
-  "homepage": "https://github.com/Blackscr33n/WT1-projekt#readme"
+  "homepage": "https://github.com/Blackscr33n/WT1-projekt#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-image": "^4.1.0",
+    "uglifyjs-webpack-plugin": "^1.1.2",
+    "webpack": "^3.8.1",
+    "webpack-stream": "^4.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.2.1",
+    "moment": "^2.19.3"
+  }
 }

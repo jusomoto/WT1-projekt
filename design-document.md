@@ -94,4 +94,4 @@ Bei unserem Design ist es uns wichtig, dass der User nicht mit zu vielen Informa
 | 3.6      | Functional: Algorithmus Kursentwicklung| 10.12.17 |
 | 4.1      | Testing: abgeschlossen | 08.01.17 |
 | 4.2      | Testing: gefundene Bugs behoben | 15.01.17 |
-| 5.1      | Ende: Projektabschluss & Abgabe | 24.01.18 |
+| 5.1      | Ende: Projektabschluss & Abgabe | 20.01.18 |
