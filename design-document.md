@@ -75,6 +75,11 @@ Paperclip erreicht mit einfachen Mitteln doch einiges, im Sinne von „Weniger i
 
 Bei unserem Design ist es uns wichtig, dass der User nicht mit zu vielen Informationen auf einmal erschlagen wird. Dies wollen wir durch "Tabs" in der Navigation realisieren. Unser Spiel wird mobil genauso spielbar sein wie am PC. Das Responsive Design wollen wir mittels Bootstrap v4 umsetzen.
 
+![Layout][logo]
+
+[logo]: https://raw.githubusercontent.com/Blackscr33n/WT1-projekt/master/mockup_bam.png "Layout Mockup"
+
+
 <a name="milestone"></a>
 
 ## Meilensteinplan

@@ -1,8 +1,9 @@
-// barrel - Datei
-var $ = require('jquery');
-var createShop = require('./functions/create-shop.js');
+window.jQuery = require("jquery");
+window.Tether = require("tether");
+var bootstrap = require('bootstrap');
+var shop = require('./functions/shop.js');
+window.$ = window.jQuery;
 
 $(document).ready(function(){
-    
-    createShop();
+    shop.createShop();
 });

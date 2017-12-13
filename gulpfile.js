@@ -52,7 +52,7 @@ gulp.task("webpack-dev-server", function(callback) {
 });
 
 gulp.task('css', function(){
-    return gulp.src('src/css/*.css')
+    return gulp.src(['src/css/*.css', 'bootstrap/dist/css/bootstrap.min.css'])
     .pipe(minifyCSS())
     .pipe(gulp.dest('dist/css'))
 });
