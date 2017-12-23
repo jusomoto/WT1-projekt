@@ -100,3 +100,29 @@ Bei unserem Design ist es uns wichtig, dass der User nicht mit zu vielen Informa
 | 4.1      | Testing: abgeschlossen | 08.01.17 |
 | 4.2      | Testing: gefundene Bugs behoben | 15.01.17 |
 | 5.1      | Ende: Projektabschluss & Abgabe | 20.01.18 |
+
+
+----------------
+
+Feedback von Hr. Ertl:
+
+
+Sie waehlen ein dem Zeitgeist entsprechendes Thema. Ich gehe davon aus das sie nur simulierte Bitcoins minen und keine echten.
+
+Anbei ein paar Kommentare mit denen sie dann intern weiter diskutieren koennen:
+
+- die Erkenntnisse von Paperclip sind plausibel und gut gewaehlt.
+
+- zur Spielmechanik: wie bauen sie die externen Events wie unvorhergesehene Ausgaben ein? Haben sie hier eine Storyline anhand von Schwellwerten?
+
+- wie lange dauert ein Spiel geplanterweise in Minuten/Stunden bis man 1x durch ist?
+
+- das UI sieht ansprechend und aufgeraeumt aus. Wird es auch eine Hilfefunktion geben damit man weiss was man tun muss?
+
+- wie gehen sie mit dem Thema Hiscore/speichern um?
+
+- der Meilensteinplan ist aeusserst genau. Wie stellen sie sicher das sie hier jederzeit am richtigen Weg sind und alle Meilensteine einhalten? Gibt es einen Projekt-Review Cycle?
+
+- wie sieht ihr Testplan genau aus?
+
+- @Technologien: verwenden sie ausserhalb von Bootstrap noch andere Libs?
