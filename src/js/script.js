@@ -7,7 +7,6 @@ var redraw = require('./functions/redrawScreen.js');
 //var bootstrap = require('bootstrap');
 
 $(document).ready(function(){
-    shop.createShop(storage, redraw);
 });
 
 (function() {
@@ -23,7 +22,8 @@ $(document).ready(function(){
         //then init the hardware
         storage.storageClass.setInitHardware(hardwareArray);
         //from now on we can redraw the screen, because the JSON is read
-        redraw.redrawScreen.initFunction(storage);
+        shop.createShop(storage, redraw);
+        redraw.redrawScreen.initFunction(storage, shop);
         redraw.redrawScreen.updateScreen();
       });
   })();
