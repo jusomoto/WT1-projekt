@@ -1,6 +1,5 @@
-
 module.exports = {
-    createShop: function (storageFile) {
+    createShop: function (storageFile, redrawScreen) {
         $(document).ready(function () {
             //$('#shop-items').html()
             $.getJSON("data/hardware.json", function (data) {
@@ -8,17 +7,19 @@ module.exports = {
                     var htmlBody = "<div><button type=\"button\" class=\"btn btn-secondary \" id='buy-" + val.id + "'>Buy " + val.name + "</button><span>+ " + val.miningEarnings + " BTC</span></div>";
                     $('#shop-items').html($('#shop-items').html() + htmlBody);
                 });
-                addEventListener(storageFile);
+                addEventListener(storageFile, redrawScreen);
             });
         });
     },
 };
 
 var storage = undefined;
+var redraw = undefined;
 
-var addEventListener = function (storageFile) {
+var addEventListener = function (storageFile, redrawScreen) {
     let shopItems = $("#shop-items").children();
     storage = storageFile;
+    redraw = redrawScreen;
 
     for (let key in shopItems) {
         let miningItem = shopItems[key].children;
@@ -37,6 +38,7 @@ var shopButtonClicked = function(element) {
     buttonID = buttonID.replace("buy-", "");
     if(storage.storageClass.canItemBeBought(buttonID)){
         storage.storageClass.buyItem(buttonID);
+        redraw.redrawScreen.updateScreen();
     }
     console.log("dollar value after = " + storage.storageClass.getDollarValue());
 };
