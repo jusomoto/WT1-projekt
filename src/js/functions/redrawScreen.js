@@ -50,22 +50,8 @@ exports.redrawScreen = (function () {
                 
             }
         } 
-        addEventListenerShop();
+        shop.addEventListener();
     }
-
-    let addEventListenerShop = function () {
-        let shopItems = $("#shop-items").children();
-    
-        for (let key in shopItems) {
-            let miningItem = shopItems[key].children;
-            for(let key in miningItem)
-            {
-                if (miningItem[key].type == "button") {
-                    miningItem[key].addEventListener("click", shop.shopButtonClicked)
-                }
-            }
-        }
-    };
 
     return{
         initFunction: initFunction,
