@@ -8,6 +8,7 @@ exports.redrawScreen = (function () {
 
     var updateScreen = function(){
         updateUSDAndBitcoins();
+        renderCurrentInventory();
     };
 
     var updateUSDAndBitcoins = function(){
@@ -17,10 +18,25 @@ exports.redrawScreen = (function () {
         currentBTC.text(storage.storageClass.getBitcoinValue());
     };
 
+    var renderCurrentInventory = function(){
+        let hardware = storage.storageClass.getHardware();
+        $('#inventory-items').empty()
+        for (let key in hardware) {
+            if (hardware.hasOwnProperty(key)) {
+                let element = hardware[key];
+                if(element.count > 0){
+                    var htmlBody = "<div><button type=\"button\" class=\"btn btn-secondary \" id='buy-" + element.id + "'>Buy " + element.name + "</button><span>+ " + element.upgradeEarnings + " BTC</span></div>";
+                    $('#inventory-items').html($('#inventory-items').html() + htmlBody);
+                }
+            }
+        }
+    }
+
     return{
         initFunction: initFunction,
         updateUSDAndBitcoins: updateUSDAndBitcoins,
-        updateScreen: updateScreen
+        updateScreen: updateScreen,
+        renderCurrentInventory: renderCurrentInventory
     }
 
 })();

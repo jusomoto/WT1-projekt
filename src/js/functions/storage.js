@@ -10,7 +10,7 @@ exports.storageClass = (function () {
     // Keep this variable private inside this closure scope
     var bitCoinsValue = 0;
     var availableHardware = [];
-    var dollarValue = 2000;
+    var dollarValue = 10000;
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
@@ -43,6 +43,7 @@ exports.storageClass = (function () {
         if(canItemBeBought){
             clickedShopItem.count++;
             dollarValue = dollarValue - clickedShopItem.price;
+            clickedShopItem.upgradeEarnings = Number(clickedShopItem.miningEarnings) * clickedShopItem.count;
         }
     }
 
