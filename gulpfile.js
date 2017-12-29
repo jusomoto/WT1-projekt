@@ -18,7 +18,7 @@ gulp.task('webpack', function() {
           path: path.resolve(__dirname, 'dist')
         },
         plugins: [
-            new UglifyJsPlugin({sourceMap: true})
+            //new UglifyJsPlugin({sourceMap: true})
         ]
     }))
     .pipe(gulp.dest('dist/'));
