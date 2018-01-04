@@ -30,3 +30,8 @@ body {
 h3 {
     color: rgba(3, 3, 82, 0.459);
 }
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
