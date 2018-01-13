@@ -7,9 +7,10 @@ var redraw = require('./functions/redrawScreen.js');
 //var bootstrap = require('bootstrap');
 
 $(document).ready(function(){
+    $("#miningBtn").click(miningBtnClicked);
 });
 
-(function() {
+var x =function() {
     $.getJSON("data/hardware.json", {
       format: "json"
     })
@@ -26,4 +27,16 @@ $(document).ready(function(){
         redraw.redrawScreen.initFunction(storage, shop);
         redraw.redrawScreen.updateScreen();
       });
-  })();
+  }();
+
+  let miningBtnClicked = function(element) {
+      //todo: add fading for button
+      redraw.redrawScreen.disableWholeShop();
+      setTimeout(miningFinished, 10000);
+}
+
+let miningFinished = function(element) {
+    storage.storageClass.startMining();
+    redraw.redrawScreen.updateScreen();
+}
+
