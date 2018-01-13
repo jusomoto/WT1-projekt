@@ -62,7 +62,10 @@ exports.storageClass = (function () {
     var startMining = function() {
         for(let id in availableHardware){
             let hardWare = availableHardware[id];
-            bitCoinsValue = bitCoinsValue + hardWare.count* hardWare.upgradeEarnings;
+            if(hardWare.count >= 1)
+            {
+                bitCoinsValue = bitCoinsValue + hardWare.upgradeEarnings;
+            }
         }
     }
     

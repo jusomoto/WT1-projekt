@@ -32,7 +32,7 @@ var x =function() {
   let miningBtnClicked = function(element) {
       //todo: add fading for button
       redraw.redrawScreen.disableWholeShop();
-      setTimeout(miningFinished, 10000);
+      setTimeout(miningFinished, 2000);
 }
 
 let miningFinished = function(element) {
