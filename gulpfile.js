@@ -18,7 +18,7 @@ gulp.task('webpack', function() {
           path: path.resolve(__dirname, 'dist')
         },
         plugins: [
-            //new UglifyJsPlugin({sourceMap: true})
+            new UglifyJsPlugin({sourceMap: true})
         ]
     }))
     .pipe(gulp.dest('dist/'));
@@ -52,7 +52,7 @@ gulp.task("webpack-dev-server", function(callback) {
 });
 
 gulp.task('css', function(){
-    return gulp.src(['src/css/*.css', 'bootstrap/dist/css/bootstrap.min.css'])
+    return gulp.src(['src/css/*.css', 'node_modules/bootstrap/dist/css/bootstrap.min.css'])
     .pipe(minifyCSS())
     .pipe(gulp.dest('dist/css'))
 });
@@ -63,4 +63,10 @@ gulp.task('image', function () {
         .pipe(gulp.dest('./dist/img'));
 });
 
-gulp.task('default', [ 'copy-json', 'webpack', 'css', 'image', 'webpack-dev-server' ]);
+gulp.task('html', function() {
+    gulp.src('src/index.html')
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('default', [ 'copy-json','html', 'css', 'image', 'webpack', 'webpack-dev-server' ]);
+

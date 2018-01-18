@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(73, 140, 199, 0.747);
+    background-color: #ffffff;
 }
 
 #divborder {
@@ -31,6 +31,34 @@ h3 {
     color: rgba(3, 3, 82, 0.459);
 }
 
+/* 
+--------------
+|             |
+| Profile-bar |
+|             | 
+--------------
+*/
+
+#profile .card-block {
+    padding: 0.5rem;
+}
+#profile {
+    margin: 0.5rem 0;
+}
+
+#btc-logo {
+    max-width: 15px;
+    height: auto;
+}
+
+img.logo {
+    max-width: 20%;
+}
+
+.logo-container {
+    text-align: center;
+}
+
 .disabled {
     opacity: 0.4;
     pointer-events: none;
@@ -42,4 +70,5 @@ h3 {
 
 .show-div {
     display:block
+
 }
