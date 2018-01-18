@@ -63,4 +63,9 @@ gulp.task('image', function () {
         .pipe(gulp.dest('./dist/img'));
 });
 
-gulp.task('default', [ 'copy-json', 'webpack', 'css', 'image', 'webpack-dev-server' ]);
+gulp.task('html', function() {
+    gulp.src('src/index.html')
+    .pipe(gulp.dest('./dist/'));
+});
+
+gulp.task('default', [ 'copy-json','html', 'css', 'image', 'webpack', 'webpack-dev-server' ]);
