@@ -9,7 +9,7 @@ $(document).ready(function(){
     var zw5 = 0;
     var zw6 = 0;
     var zw7 = 0;
-    setInterval(function price2(){
+    setInterval(function price2() {
 
        Final = price * (Math.random() + 0.6);
        $("#Kurs").text(Final.toFixed(5));
