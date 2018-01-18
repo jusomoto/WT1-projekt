@@ -18,8 +18,8 @@
                 <div id="profile" class="card">
                     <div class="card-block">
                         <span id="username-txt">Username</span><br>
-                        <span>$: 261$</span>
-                        <span><img id="btc-logo" src="img/btc-logo.png" alt="BTC"/>: 5.1023</span>
+                        <span>$: <span id="currentUSD_value_span"></span></span>
+                        <span><img id="btc-logo" src="img/btc-logo.png" alt="BTC"/>: <span id="currentBitcoin_value_span"></span></span>
                     </div>
                 </div>
             </div>
@@ -60,6 +60,25 @@
                         <!-- items are generated -->
                     </ul>
                 </div>                   
+            </div>
+        </div>
+        <div class="row col-lg-12">
+            <div class="col-lg-3" id="inventory">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Inventar</h4>
+                        <div id="inventory-items">
+                        </div>
+                    </div>
+                </div>                   
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3" id="miningBtn-Div">
+                <button id="miningBtn"> StartMining </button>
+                <div class="progress hidden-div" id = "miningProgressDiv">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" id="miningProgressBar" role="progressbar" style="width: 10%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>              
+                </div>
             </div>
         </div>
     </div>

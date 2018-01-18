@@ -62,5 +62,13 @@ img.logo {
 .disabled {
     opacity: 0.4;
     pointer-events: none;
+}
+
+.hidden-div {
+    display:none
+}
+
+.show-div {
+    display:block
 
 }

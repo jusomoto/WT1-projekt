@@ -59,6 +59,16 @@ exports.storageClass = (function () {
         return availableHardware;
     }
 
+    var startMining = function() {
+        for(let id in availableHardware){
+            let hardWare = availableHardware[id];
+            if(hardWare.count >= 1)
+            {
+                bitCoinsValue = bitCoinsValue + hardWare.upgradeEarnings;
+            }
+        }
+    }
+    
 
     //private functions are decleared with let
 
@@ -84,6 +94,7 @@ exports.storageClass = (function () {
         getDollarValue: getDollarValue,
         getHardware: getHardware,
         canItemBeBought: canItemBeBought,
-        buyItem: buyItem
+        buyItem: buyItem,
+        startMining: startMining,
     }
   })();

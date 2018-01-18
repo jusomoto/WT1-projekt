@@ -10,54 +10,58 @@
     <body>
         <div class="container">
         <div class="row">
-            <div class="col-lg-4"></div>
-            <div class="col-lg-4">
-                <h2>Be a Mineonaire</h2>
-                <div>
-                    <span> USD: </span>
-                    <span id="currentUSD_value_span">0</span>
-                    <span>$</span>
-                    <br>
-                    <span>Bitcoin: </span>
-                    <span id="currentBitcoin_value_span">0</span>
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="logo-container"><img class="logo" src="img/logo.png" alt="Be a Mineonaire" /></div>
+            </div>
+            <div class="col-lg-3">
+                <div id="profile" class="card">
+                    <div class="card-block">
+                        <span id="username-txt">Username</span><br>
+                        <span>$: <span id="currentUSD_value_span"></span></span>
+                        <span><img id="btc-logo" src="img/btc-logo.png" alt="BTC"/>: <span id="currentBitcoin_value_span"></span></span>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4"></div>
         </div>
-        <div class="row col-lg-12">
-
+        <div class="row">
             <div class="col-lg-3">
-                <br>Kurs zu USD:<c id ="Kurs"></c> 
-                <br> Umtausch:
-                <br>
-                <form>
-                    Bitcoins:
-                    <input type="text" name="Bitcoin" value="1">
-                    <br> USD:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="USD" value="560">
-                    <br>
-                    <input type="submit" value="Submit">
-                </form>
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title">Umtausch:</h4>
+                        <br>Kurs zu USD:<c id ="Kurs"></c>
+                        <form>
+                            Bitcoins:
+                            <input type="text" name="Bitcoin" value="1">
+                            <br> USD:
+                            <input type="text" name="USD" value="560">
+                            <br>
+                            <input type="submit" value="Submit">
+                        </form>
+                    </div>
+                </div>
             </div>
         
             <div class="col-lg-6" id="news">
-                Newsfeed:
-                <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <div class="card">
+                    <div class="card-block">
+                        <h4 class="card-title">Newsfeed</h4>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+                        sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+                </div>
             </div>
             <div class="col-lg-3" id="shop">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Shop</h4>
-                        <div id="shop-items">
-                        </div>
-                    </div>
+                    <div class="card-header">Shop</div>
+                    <ul class="list-group list-group-flush" id="shop-items">
+                        <!-- items are generated -->
+                    </ul>
                 </div>                   
             </div>
         </div>
-
         <div class="row col-lg-12">
             <div class="col-lg-3" id="inventory">
                 <div class="card">
@@ -69,49 +73,14 @@
                 </div>                   
             </div>
         </div>
-    
-    <!-- 
-        <div>
-           <a id="standart">Standart PC</a>
-            <br>
-            <a id="nrstandart">x23
-            </a>
+        <div class="row">
+            <div class="col-lg-3" id="miningBtn-Div">
+                <button id="miningBtn"> StartMining </button>
+                <div class="progress hidden-div" id = "miningProgressDiv">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" id="miningProgressBar" role="progressbar" style="width: 10%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>              
+                </div>
+            </div>
         </div>
-        <br>
-        <div>
-            <a id ="PC">Mineing PC</a>
-            <br>
-            <a id="nrpc"> x15
-            </a>
-        </div>
-        <br>
-        <div>
-        <a id="server">Server</a>
-            <br>
-            <a id="nrserver">x10
-            </a>
-        </div>
-        <br>
-        <div>
-       <a id="farm">Server Farm</a>
-            <br>
-            <a id="nrfarm">x8
-            </a>
-        </div>
-        <br>
-        <div> 
-        <a id="quanten">Quanten Computer</a>
-            <br>
-            <a id="nrquanten">x3
-            </a>
-        </div>
-        <br>
-        <div> 
-        <a id="wurmloch">Wurmloch Generator</a>
-            <br>
-            <a id="nrwurmloch">x1
-            </a>
-        </div> -->
     </div>
     
     </body>
