@@ -12,11 +12,12 @@ exports.redrawScreen = (function () {
         updateUSDAndBitcoins();
         renderCurrentInventory();
         renderShop();
+        renderUserProfile();
     };
 
     var updateUSDAndBitcoins = function(){
-        let currentUSD = $("#currentUSD_value_span");
-        let currentBTC = $("#currentBitcoin_value_span");
+        let currentUSD = $("#usd-amount");
+        let currentBTC = $("#btc-amount");
         currentUSD.text(storage.storageClass.getDollarValue());
         currentBTC.text(storage.storageClass.getBitcoinValue());
     };
@@ -32,6 +33,13 @@ exports.redrawScreen = (function () {
                     $('#inventory-items').html($('#inventory-items').html() + htmlBody);
                 }
             }
+        }
+    }
+
+    var renderUserProfile = function() {
+        let username = storage.storageClass.getUsername();
+        if(username) {
+            $('#username-txt').text(username);
         }
     }
 
@@ -58,7 +66,8 @@ exports.redrawScreen = (function () {
         updateUSDAndBitcoins: updateUSDAndBitcoins,
         updateScreen: updateScreen,
         renderCurrentInventory: renderCurrentInventory,
-        renderShop: renderShop
+        renderShop: renderShop,
+        renderUserProfile: renderUserProfile
     }
 
 })();

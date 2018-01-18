@@ -1,0 +1,9 @@
+{
+    "hardware": [
+        { "id": 0, "name": "PC", "price": 1000, "currency": "USD", "miningEarnings": "0.03", "upgradeEarnings": "0.02" },
+        { "id": 1, "name": "AntMiner", "price": 5000, "currency": "USD", "miningEarnings": "0.1", "upgradeEarnings": "0.07" },
+        { "id": 2, "name": "Server", "price": 10000, "currency": "USD", "miningEarnings": "0.4", "upgradeEarnings": "0.1" },
+        { "id": 3, "name": "Serverfarm", "price": 20000, "currency": "USD", "miningEarnings": "0.9", "upgradeEarnings": "0.2" },
+        { "id": 4, "name": "Wurmlochgenerator", "price": 400000, "currency": "USD", "miningEarnings": "50", "upgradeEarnings": "10" }
+    ]
+}

@@ -11,6 +11,7 @@ exports.storageClass = (function () {
     var bitCoinsValue = 0;
     var availableHardware = [];
     var dollarValue = 10000;
+    var username = '';
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
@@ -74,6 +75,14 @@ exports.storageClass = (function () {
           }
     }
 
+    let setUsername = function(username) {
+        this.username = username;
+    }
+
+    let getUsername = function() {
+        return this.username;
+    }
+
     // Explicitly reveal public pointers to the private functions 
     // that we want to reveal publicly
   
@@ -84,6 +93,8 @@ exports.storageClass = (function () {
         getDollarValue: getDollarValue,
         getHardware: getHardware,
         canItemBeBought: canItemBeBought,
-        buyItem: buyItem
+        buyItem: buyItem,
+        setUsername: setUsername,
+        getUsername: getUsername
     }
   })();
