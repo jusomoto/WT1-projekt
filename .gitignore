@@ -1,2 +1,4 @@
 node_modules/
-dist/
+dist/css/*.css
+dist/bundle.min.js
+dist/bundle.min.js.map

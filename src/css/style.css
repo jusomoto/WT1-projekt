@@ -58,3 +58,9 @@ img.logo {
 .logo-container {
     text-align: center;
 }
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+
+}
