@@ -20,7 +20,8 @@ $(document).ready(function() {
   change.changeCurrency(storage,redraw);
   let intervallCounter = 0;
 
-  let intervall = setInterval(function(){
+  eventHandler.triggerNews(0, "steigung");
+  let intervall = setInterval(function() {
     intervallCounter++;
     time.timeTick(storage, redraw);
     course.runCourseByIntervall(storage);
@@ -89,8 +90,8 @@ var x =function() {
         highscore.getDummyData();
         highscore.addUserToHighscore('ungerdunger', 10000, 13000);
         eventHandler.initJson().done(() => {
-          //eventHandler.triggerNews(0, "steigung");
-          //eventHandler.triggerEvent(storage);
+          //
+          //
         });
         redraw.redrawScreen.initFunction(storage, shop);
         redraw.redrawScreen.updateScreen();
