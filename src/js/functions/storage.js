@@ -11,11 +11,8 @@ exports.storageClass = (function () {
     var bitCoinsValue = 0;
     var availableHardware = [];
     var dollarValue = 10000;
-<<<<<<< HEAD
     var username = '';
-=======
     var course = 1;
->>>>>>> master
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
