@@ -136,7 +136,7 @@ function fadeMIningBtnIn(){
 
 function showMiningAlertForSeconds(earnedBTC) {
     $('#miningAlert').empty();
-    $('#miningAlert').html("You earned: " + earnedBTC + " BTC");
+    $('#miningAlert').html("You earned: " + earnedBTC.toFixed(4) + " BTC");
     $('#miningAlert').fadeIn(constants.FADE_IN_MINING_ALERT);
     clearTimeout(hideMiningAlert);
     setTimeout(hideMiningAlert, constants.SHOW_MINING_ALERT_MS);
