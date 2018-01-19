@@ -12,6 +12,9 @@ var highscore = require('./functions/highscore.js');
 
 const MINING_DURATION_MS = 2000;
 const MINING_LOADER_RESPONSE = 100;
+const SHOW_MINING_ALERT_MS = 5000;
+const FADE_IN_MINING_ALERT = 400;
+const FADE_OUT_MINING_ALERT = 200;
 
 $(document).ready(function() {
 
@@ -92,7 +95,9 @@ var x =function() {
 }
 
 let miningFinished = function(element) {
-    storage.storageClass.startMining();
+    let earnedBTC = 0;
+    earnedBTC = storage.storageClass.startMining();
+    showMiningAlertForSeconds(earnedBTC);
     redraw.redrawScreen.updateScreen();
     stopFadeIn();
 }
@@ -119,4 +124,16 @@ function fadeMIningBtnIn(){
     let valueToIncrease = (100/MINING_LOADER_RESPONSE);
     currentOpacityMiningBtn = currentOpacityMiningBtn + valueToIncrease;
     $('#miningProgressBar').css('width', currentOpacityMiningBtn+'%').attr('aria-valuenow', currentOpacityMiningBtn); 
+}
+
+function showMiningAlertForSeconds(earnedBTC) {
+    $('#miningAlert').empty();
+    $('#miningAlert').html("You earned: " + earnedBTC + " BTC");
+    $('#miningAlert').fadeIn(FADE_IN_MINING_ALERT);
+    clearTimeout(hideMiningAlert);
+    setTimeout(hideMiningAlert, SHOW_MINING_ALERT_MS);
+}
+
+function hideMiningAlert(){
+    $('#miningAlert').fadeOut(FADE_OUT_MINING_ALERT);
 }

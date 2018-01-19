@@ -103,13 +103,16 @@ exports.storageClass = (function () {
         }
     }
     var startMining = function() {
+        let earnedBTC=0;
         for(let id in availableHardware){
             let hardWare = availableHardware[id];
             if(hardWare.count >= 1)
             {
+                earnedBTC = earnedBTC + hardWare.upgradeEarnings;
                 bitCoinsValue = bitCoinsValue + hardWare.upgradeEarnings;
             }
         }
+        return earnedBTC;
     }
     
 
