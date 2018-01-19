@@ -1,5 +1,7 @@
 window.jQuery = require("jquery");
 import $ from 'jquery';
+import { storageClass } from "./functions/storage";
+import { redrawScreen } from "./functions/redrawScreen";
 window.Tether = require("tether");
 window.$ = window.jQuery;
 var bootstrap = require("bootstrap");
@@ -10,17 +12,24 @@ var course = require('./functions/kurs.js');
 var change = require('./functions/change.js')
 var eventHandler = require('./functions/eventHandler.js')
 var highscore = require('./functions/highscore.js');
-
-const MINING_DURATION_MS = 2000;
-const MINING_LOADER_RESPONSE = 100;
-const SHOW_MINING_ALERT_MS = 5000;
-const FADE_IN_MINING_ALERT = 400;
-const FADE_OUT_MINING_ALERT = 200;
+var time = require('./functions/time.js');
+var constants = require("./config/config.js");
 
 $(document).ready(function() {
 
-  course.runCourseByIntervall(storage);
   change.changeCurrency(storage,redraw);
+  let intervallCounter = 0;
+
+  let intervall = setInterval(function(){
+    intervallCounter++;
+    time.timeTick(storage, redraw);
+    course.runCourseByIntervall(storage);
+    redraw.redrawScreen.updateScreen();
+    if (intervallCounter > constants.TIME_INTERVALL) {
+        clearInterval(intervall);
+    }
+  }, constants.REFRESH_RATE);
+
   $("#miningBtn").click(miningBtnClicked);
 
   //ask for username & set it
@@ -96,7 +105,7 @@ var x =function() {
       //todo: add fading for button
       IntID = startFadeBtn();
       redraw.redrawScreen.disableWholeShop();
-      setTimeout(miningFinished, MINING_DURATION_MS);
+      setTimeout(miningFinished, constants.MINING_DURATION_MS);
 }
 
 let miningFinished = function(element) {
@@ -113,7 +122,7 @@ function startFadeBtn(){
     $('#miningBtn').hide();
     $('#miningProgressDiv').removeClass('hidden-div');
     $('#miningProgressDiv').addClass('show-div');
-    let i = setInterval(fadeMIningBtnIn, MINING_DURATION_MS/MINING_LOADER_RESPONSE);
+    let i = setInterval(fadeMIningBtnIn, constants.MINING_DURATION_MS/constants.MINING_LOADER_RESPONSE);
     return i;
 }
 
@@ -126,21 +135,21 @@ function stopFadeIn() {
 }
 
 function fadeMIningBtnIn(){
-    let valueToIncrease = (100/MINING_LOADER_RESPONSE);
+    let valueToIncrease = (100/constants.MINING_LOADER_RESPONSE);
     currentOpacityMiningBtn = currentOpacityMiningBtn + valueToIncrease;
     $('#miningProgressBar').css('width', currentOpacityMiningBtn+'%').attr('aria-valuenow', currentOpacityMiningBtn); 
 }
 
 function showMiningAlertForSeconds(earnedBTC) {
     $('#miningAlert').empty();
-    $('#miningAlert').html("You earned: " + earnedBTC + " BTC");
-    $('#miningAlert').fadeIn(FADE_IN_MINING_ALERT);
+    $('#miningAlert').html("You earned: " + earnedBTC.toFixed(4) + " BTC");
+    $('#miningAlert').fadeIn(constants.FADE_IN_MINING_ALERT);
     clearTimeout(hideMiningAlert);
-    setTimeout(hideMiningAlert, SHOW_MINING_ALERT_MS);
+    setTimeout(hideMiningAlert, constants.SHOW_MINING_ALERT_MS);
 }
 
 function hideMiningAlert(){
-    $('#miningAlert').fadeOut(FADE_OUT_MINING_ALERT);
+    $('#miningAlert').fadeOut(constants.FADE_OUT_MINING_ALERT);
 }
 
 
