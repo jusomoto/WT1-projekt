@@ -1,12 +1,14 @@
 window.jQuery = require("jquery");
+import $ from 'jquery';
 window.Tether = require("tether");
 window.$ = window.jQuery;
+var bootstrap = require("bootstrap");
 var shop = require('./functions/shop.js');
 var storage = require('./functions/storage.js');
 var redraw = require('./functions/redrawScreen.js');
 var course = require('./functions/kurs.js');
 var change = require('./functions/change.js')
-//var bootstrap = require('bootstrap');
+var highscore = require('./functions/highscore.js');
 
 const MINING_DURATION_MS = 2000;
 const MINING_LOADER_RESPONSE = 100;
@@ -14,10 +16,50 @@ const SHOW_MINING_ALERT_MS = 5000;
 const FADE_IN_MINING_ALERT = 400;
 const FADE_OUT_MINING_ALERT = 200;
 
-$(document).ready(function(){
+$(document).ready(function() {
+
   course.runCourseByIntervall(storage);
   change.changeCurrency(storage,redraw);
   $("#miningBtn").click(miningBtnClicked);
+
+  //ask for username & set it
+  $('#username-modal').modal();
+
+  $('#save-user-btn').click(function() {
+    var user = $('#input-username').val();
+    storage.storageClass.setUsername(user);
+    // update screen
+    redraw.redrawScreen.renderUserProfile();
+    // hide modal
+    $('#username-modal').modal('hide');
+  });
+
+  $('#username-modal').on('hidden.bs.modal', function() {
+    // if the user hide the modal, set a default username
+    var user = storage.storageClass.getUsername();
+    if (user == '') {
+      storage.storageClass.setUsername("username");
+      redraw.redrawScreen.renderUserProfile();
+    }
+  });
+
+  $('#highscore-btn').click(function() {
+    //highscore-table-body
+    var highscoreJson = highscore.getHighscore();
+    var body = '';
+    highscoreJson.players.forEach(function(elem, index) {
+      var trClass = '';
+      if(index == 0) {
+         trClass = 'table-success';
+      }
+      body += '<tr class="'+trClass+'"><th scope="row">'+(index + 1)+'</th>';
+      body += '<td>'+elem.username+'</td>';
+      body += '<td>'+elem.time+'</td>';
+      body += '<td>'+elem.money+'</td></tr>';
+    });
+    $('#highscore-table-body').html(body);
+    $('#highscore-modal').modal();
+  });
 });
 
 var x =function() {
@@ -34,11 +76,13 @@ var x =function() {
         storage.storageClass.setInitHardware(hardwareArray);
         //from now on we can redraw the screen, because the JSON is read
         shop.createShop(storage, redraw);
+        highscore.getDummyData();
+        highscore.addUserToHighscore('ungerdunger', 10000, 13000);
         redraw.redrawScreen.initFunction(storage, shop);
         redraw.redrawScreen.updateScreen();
+        redraw.redrawScreen.renderHighscore();
       });
   }();
-
 
   var IntID = undefined;
   var currentOpacityMiningBtn = 0;

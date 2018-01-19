@@ -68,5 +68,10 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./dist/'));
 });
 
-gulp.task('default', [ 'copy-json','html', 'css', 'image', 'webpack', 'webpack-dev-server' ]);
+gulp.task('webfonts', function() {
+    gulp.src('src/webfonts/*')
+    .pipe(gulp.dest('./dist/webfonts/'));
+});
+
+gulp.task('default', [ 'copy-json','html', 'css', 'image', 'webpack', 'webpack-dev-server', 'webfonts' ]);
 

@@ -1,3 +1,4 @@
+var highscore = require('./highscore.js');
 exports.redrawScreen = (function () {
     let storage = undefined;
     let shop = undefined;
@@ -12,12 +13,13 @@ exports.redrawScreen = (function () {
         updateUSDAndBitcoins();
         renderCurrentInventory();
         renderShop();
+        renderUserProfile();
         courseUpdate();
     };
 
     var updateUSDAndBitcoins = function(){
-        let currentUSD = $("#currentUSD_value_span");
-        let currentBTC = $("#currentBitcoin_value_span");
+        let currentUSD = $("#usd-amount");
+        let currentBTC = $("#btc-amount");
         currentUSD.text(storage.storageClass.getDollarValue());
         currentBTC.text(storage.storageClass.getBitcoinValue().toFixed(5));
     };
@@ -37,6 +39,17 @@ exports.redrawScreen = (function () {
         addEventListenerInventory();
     }
 
+    var renderUserProfile = function() {
+        let username = storage.storageClass.getUsername();
+        if(username) {
+            $('#username-txt').text(username);
+        }
+    }
+
+    var renderHighscore = function() {
+        var highscoreJson = highscore.getHighscore();
+        console.log(highscoreJson);
+    }
     var addEventListenerInventory = function () {
         let inventoryItems = $("#inventory-items").children();
     
@@ -107,6 +120,8 @@ exports.redrawScreen = (function () {
         updateScreen: updateScreen,
         renderCurrentInventory: renderCurrentInventory,
         renderShop: renderShop,
+        renderUserProfile: renderUserProfile,
+        renderHighscore: renderHighscore,
         courseUpdate: courseUpdate,
         disableWholeShop: disableWholeShop
     }
