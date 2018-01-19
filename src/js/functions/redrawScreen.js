@@ -12,6 +12,7 @@ exports.redrawScreen = (function () {
         updateUSDAndBitcoins();
         renderCurrentInventory();
         renderShop();
+        courseUpdate();
     };
 
     var updateUSDAndBitcoins = function(){
@@ -77,6 +78,11 @@ exports.redrawScreen = (function () {
         shop.addEventListener();
     }
 
+    var courseUpdate = function(){
+        let courseValue = storage.storageClass.getCourse()
+        $( "#course" ).html(courseValue);
+    }
+    
     var disableWholeShop = function()
     {  
         let shopItems = $("#shop-items").children();
@@ -101,6 +107,7 @@ exports.redrawScreen = (function () {
         updateScreen: updateScreen,
         renderCurrentInventory: renderCurrentInventory,
         renderShop: renderShop,
+        courseUpdate: courseUpdate,
         disableWholeShop: disableWholeShop
     }
 

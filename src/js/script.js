@@ -4,6 +4,8 @@ window.$ = window.jQuery;
 var shop = require('./functions/shop.js');
 var storage = require('./functions/storage.js');
 var redraw = require('./functions/redrawScreen.js');
+var course = require('./functions/kurs.js');
+var change = require('./functions/change.js')
 //var bootstrap = require('bootstrap');
 
 const MINING_DURATION_MS = 2000;
@@ -13,7 +15,9 @@ const FADE_IN_MINING_ALERT = 400;
 const FADE_OUT_MINING_ALERT = 200;
 
 $(document).ready(function(){
-    $("#miningBtn").click(miningBtnClicked);
+  course.runCourseByIntervall(storage);
+  change.changeCurrency(storage,redraw);
+  $("#miningBtn").click(miningBtnClicked);
 });
 
 var x =function() {

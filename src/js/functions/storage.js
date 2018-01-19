@@ -11,6 +11,7 @@ exports.storageClass = (function () {
     var bitCoinsValue = 0;
     var availableHardware = [];
     var dollarValue = 10000;
+    var course = 1;
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
@@ -24,6 +25,10 @@ exports.storageClass = (function () {
 
     var getDollarValue = function(){
         return dollarValue;
+    };
+
+    var getStartCourse = function(){
+        return course;
     };
   
     var canItemBeBought = function(id) {
@@ -59,6 +64,40 @@ exports.storageClass = (function () {
         return availableHardware;
     }
 
+    var setCourse = function(courseExt){
+        course = courseExt;
+    }
+
+    var getCourse = function (){
+        return course;
+    }
+
+    var canUsdBeChanged = function(usd){
+
+        if(usd <= dollarValue){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    var changeBtcToUsd = function(usd,btc){
+        bitCoinsValue = bitCoinsValue - btc;
+        dollarValue = dollarValue + usd;
+    }
+    var changeUsdToBtc = function(usd,btc){
+        dollarValue = dollarValue - usd;
+        bitCoinsValue = bitCoinsValue + btc;
+    }
+
+    var canBtcBeChanged = function(usd){
+        if(usd <= bitCoinsValue){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
     var startMining = function() {
         let earnedBTC=0;
         for(let id in availableHardware){
@@ -98,6 +137,13 @@ exports.storageClass = (function () {
         getHardware: getHardware,
         canItemBeBought: canItemBeBought,
         buyItem: buyItem,
-        startMining: startMining,
+        setCourse: setCourse,
+        getCourse: getCourse,
+        canUsdBeChanged: canUsdBeChanged,
+        canBtcBeChanged: canBtcBeChanged,
+        changeUsdToBtc: changeUsdToBtc,
+        changeBtcToUsd: changeBtcToUsd,
+        getStartCourse: getStartCourse,
+        startMining: startMining
     }
   })();
