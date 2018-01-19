@@ -1,4 +1,6 @@
 var Hardware = require('../classes/hardware.js');
+var moment = require("moment");
+var constants = require("../config/config.js");
 
 //closures:
 //https://www.w3schools.com/js/js_function_closures.asp
@@ -8,11 +10,12 @@ var Hardware = require('../classes/hardware.js');
 exports.storageClass = (function () {
     
     // Keep this variable private inside this closure scope
-    var bitCoinsValue = 0;
+    var bitCoinsValue = constants.START_BTC_VALUE;
     var availableHardware = [];
-    var dollarValue = 10000;
+    var dollarValue = constants.START_DOLLAR_VALUE;
     var username = '';
-    var course = 1;
+    var course = constants.START_COURSE_VALUE;
+    var currentDay = moment(constants.START_DATE);
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
@@ -112,6 +115,7 @@ exports.storageClass = (function () {
         return earnedBTC;
     }
     
+    var setTime
 
     //private functions are decleared with let
 
@@ -135,6 +139,15 @@ exports.storageClass = (function () {
         return username;
     }
 
+    var getCurrentDay = function() {
+        return currentDay;
+    }
+
+    var increaseCurrentDay = function(increaseByDay, increaseByMonth) {
+        currentDay.add(increaseByDay, 'day').add(increaseByMonth, 'months');
+        return currentDay;
+    }
+
     // Explicitly reveal public pointers to the private functions 
     // that we want to reveal publicly
   
@@ -155,6 +168,8 @@ exports.storageClass = (function () {
         changeUsdToBtc: changeUsdToBtc,
         changeBtcToUsd: changeBtcToUsd,
         getStartCourse: getStartCourse,
-        startMining: startMining
+        startMining: startMining,
+        getCurrentDay: getCurrentDay,
+        increaseCurrentDay: increaseCurrentDay
     }
   })();

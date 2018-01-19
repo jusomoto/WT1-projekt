@@ -1,5 +1,7 @@
 window.jQuery = require("jquery");
 import $ from 'jquery';
+import { storageClass } from "./functions/storage";
+import { redrawScreen } from "./functions/redrawScreen";
 window.Tether = require("tether");
 window.$ = window.jQuery;
 var bootstrap = require("bootstrap");
@@ -9,6 +11,7 @@ var redraw = require('./functions/redrawScreen.js');
 var course = require('./functions/kurs.js');
 var change = require('./functions/change.js')
 var highscore = require('./functions/highscore.js');
+var time = require('./functions/time.js');
 
 const MINING_DURATION_MS = 2000;
 const MINING_LOADER_RESPONSE = 100;
@@ -20,6 +23,7 @@ $(document).ready(function() {
 
   course.runCourseByIntervall(storage);
   change.changeCurrency(storage,redraw);
+  time.startTime(storage, redraw);
   $("#miningBtn").click(miningBtnClicked);
 
   //ask for username & set it

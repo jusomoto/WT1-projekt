@@ -1,0 +1,16 @@
+var moment = require("moment");
+
+function define(name, value) {
+    Object.defineProperty(exports, name, {
+        value:      value,
+        enumerable: true
+    });
+}
+
+define("PROB_FOR_COIN_RISE", 0.55);
+define("TIME_INTERVALL", 287);
+define("REFRESH_RATE", 1000);
+define("START_DATE", moment([2017, 1, 1]).month(1).format("YYYY-MM-DD"));
+define("START_BTC_VALUE", 0);
+define("START_DOLLAR_VALUE", 10000);
+define("START_COURSE_VALUE", 1);
