@@ -23,6 +23,7 @@ $(document).ready(function() {
     intervallCounter++;
     time.timeTick(storage, redraw);
     course.runCourseByIntervall(storage);
+    redraw.redrawScreen.updateScreen();
     if (intervallCounter > constants.TIME_INTERVALL) {
         clearInterval(intervall);
     }
