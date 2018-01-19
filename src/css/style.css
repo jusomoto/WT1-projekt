@@ -50,6 +50,10 @@ h3 {
     margin: 0.5rem 0;
 }
 
+#miningAlert {
+    margin: 0.5rem 0;   
+}
+
 #btc-logo {
     max-width: 15px;
     height: auto;
@@ -74,5 +78,8 @@ img.logo {
 
 .show-div {
     display:block
+}
 
+.center-text {
+    text-align: center;
 }
