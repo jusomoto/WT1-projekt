@@ -4,13 +4,17 @@ window.$ = window.jQuery;
 var shop = require('./functions/shop.js');
 var storage = require('./functions/storage.js');
 var redraw = require('./functions/redrawScreen.js');
+var course = require('./functions/kurs.js');
+var change = require('./functions/change.js')
 //var bootstrap = require('bootstrap');
 
 const MINING_DURATION_MS = 2000;
 const MINING_LOADER_RESPONSE = 100;
 
 $(document).ready(function(){
-    $("#miningBtn").click(miningBtnClicked);
+  course.runCourseByIntervall(storage);
+  change.changeCurrency(storage,redraw);
+  $("#miningBtn").click(miningBtnClicked);
 });
 
 var x =function() {
