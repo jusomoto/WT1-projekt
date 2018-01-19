@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Index</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css">        
-        <link rel="stylesheet" href="css/style.css">
-        <script src="bundle.min.js"></script>   
-    </head>
-    <body>
-        <div class="container">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
             </div>
-        
+
             <div class="col-lg-6" id="news">
                 <div class="card">
                     <div class="card-block">
@@ -59,30 +59,38 @@
                     <ul class="list-group list-group-flush" id="shop-items">
                         <!-- items are generated -->
                     </ul>
-                </div>                   
+                </div>
             </div>
         </div>
-        <div class="row col-lg-12">
+        <div class="row">
             <div class="col-lg-3" id="inventory">
                 <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title">Inventar</h4>
-                        <div id="inventory-items">
-                        </div>
-                    </div>
-                </div>                   
+                    <div class="card-header">Inventar</div>
+                    <ul class="list-group list-group-flush" id="inventory-items">
+                        <!-- items are generated -->
+                </div>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-3" id="miningBtn-Div">
-                <button id="miningBtn"> StartMining </button>
-                <div class="progress hidden-div" id = "miningProgressDiv">
-                    <div class="progress-bar progress-bar-striped progress-bar-animated" id="miningProgressBar" role="progressbar" style="width: 10%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>              
+                <div class="card">
+                    <button id="miningBtn"> Mine for Coins! </button>
+                    <div class="progress hidden-div" id="miningProgressDiv">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="miningProgressBar" role="progressbar" style="width: 10%"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-3 alert alert-success hidden-div center-text" id="miningAlert" role="alert">
+                This is a success alert—check it out!
+            </div>
+        </div>
     </div>
-    
-    </body>
-    <div id="chart" style="width:800px; height:400px;"></div>
-    </html>
+    </div>
+    </div>
+
+</body>
+<div id="chart" style="width:800px; height:400px;"></div>
+</html>

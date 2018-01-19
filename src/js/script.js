@@ -82,6 +82,7 @@ function showMiningAlertForSeconds(earnedBTC) {
     $('#miningAlert').empty();
     $('#miningAlert').html("You earned: " + earnedBTC + " BTC");
     $('#miningAlert').fadeIn(FADE_IN_MINING_ALERT);
+    clearTimeout(hideMiningAlert);
     setTimeout(hideMiningAlert, SHOW_MINING_ALERT_MS);
 }
 
