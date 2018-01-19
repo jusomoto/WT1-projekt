@@ -46,6 +46,10 @@ h3 {
     margin: 0.5rem 0;
 }
 
+#inventory {
+    margin: 0.5rem 0;
+}
+
 #btc-logo {
     max-width: 15px;
     height: auto;
