@@ -14,13 +14,14 @@ exports.redrawScreen = (function () {
         renderCurrentInventory();
         renderShop();
         renderUserProfile();
+        courseUpdate();
     };
 
     var updateUSDAndBitcoins = function(){
         let currentUSD = $("#usd-amount");
         let currentBTC = $("#btc-amount");
         currentUSD.text(storage.storageClass.getDollarValue());
-        currentBTC.text(storage.storageClass.getBitcoinValue());
+        currentBTC.text(storage.storageClass.getBitcoinValue().toFixed(5));
     };
 
     var renderCurrentInventory = function(){
@@ -30,11 +31,12 @@ exports.redrawScreen = (function () {
             if (hardware.hasOwnProperty(key)) {
                 let element = hardware[key];
                 if(element.count > 0){
-                    var htmlBody = "<div><button type=\"button\" class=\"btn btn-secondary \" id='buy-" + element.id + "'>Buy " + element.name + "</button><span>+ " + element.upgradeEarnings + " BTC</span></div>";
+                    var htmlBody = "<div><button type=\"button\" class=\"btn btn-secondary \" id='upgrade-" + element.id + "'>Upgrade " + element.name + "</button><span>+ " + element.upgradeEarnings + " BTC</span></div>";
                     $('#inventory-items').html($('#inventory-items').html() + htmlBody);
                 }
             }
         }
+        addEventListenerInventory();
     }
 
     var renderUserProfile = function() {
@@ -48,6 +50,28 @@ exports.redrawScreen = (function () {
         var highscoreJson = highscore.getHighscore();
         console.log(highscoreJson);
     }
+    var addEventListenerInventory = function () {
+        let inventoryItems = $("#inventory-items").children();
+    
+        for (let key in inventoryItems) {
+            let miningItem = inventoryItems[key].children;
+            for(let key in miningItem)
+            {
+                if (miningItem[key].type == "button") {
+                    miningItem[key].addEventListener("click", inventoryButtonClicked)
+                }
+            }
+        }
+    }
+
+    let inventoryButtonClicked = function(element) {
+        // let buttonID = element.target.id
+        // buttonID = buttonID.replace("buy-", "");
+        // if(storage.storageClass.canItemBeBought(buttonID)){
+        //     storage.storageClass.buyItem(buttonID);
+        //     redraw.redrawScreen.updateScreen();
+        // }
+    };
 
     var renderShop = function(){
         let hardware = storage.storageClass.getHardware();
@@ -67,6 +91,29 @@ exports.redrawScreen = (function () {
         shop.addEventListener();
     }
 
+    var courseUpdate = function(){
+        let courseValue = storage.storageClass.getCourse()
+        $( "#course" ).html(courseValue);
+    }
+    
+    var disableWholeShop = function()
+    {  
+        let shopItems = $("#shop-items").children();
+        for(let i in shopItems)
+        {
+            let shopItemDiv = shopItems[i].children;
+            for(let j in shopItemDiv)
+            {
+                let element = shopItemDiv[j];
+                if(element.classList != undefined)
+                {
+                    element.classList.remove('disabled');
+                    element.classList.add('disabled');
+                }
+            }
+        }
+    }
+
     return{
         initFunction: initFunction,
         updateUSDAndBitcoins: updateUSDAndBitcoins,
@@ -74,7 +121,9 @@ exports.redrawScreen = (function () {
         renderCurrentInventory: renderCurrentInventory,
         renderShop: renderShop,
         renderUserProfile: renderUserProfile,
-        renderHighscore: renderHighscore
+        renderHighscore: renderHighscore,
+        courseUpdate: courseUpdate,
+        disableWholeShop: disableWholeShop
     }
 
 })();

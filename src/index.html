@@ -42,16 +42,16 @@
                         <br>Kurs zu USD:<c id ="Kurs"></c>
                         <form>
                             Bitcoins:
-                            <input type="text" name="Bitcoin" value="1">
+                            <input type="text" name="Bitcoin" id="btcInput" />
                             <br> USD:
-                            <input type="text" name="USD" value="560">
+                            <input type="text" name="USD" id="usdInput" />
                             <br>
-                            <input type="submit" value="Submit">
+                            <input type="button" id="changeBtt" value="Umtauschen" />
                         </form>
                     </div>
                 </div>
             </div>
-        
+
             <div class="col-lg-6" id="news">
                 <div class="card">
                     <div class="card-block">
@@ -69,9 +69,34 @@
                     <ul class="list-group list-group-flush" id="shop-items">
                         <!-- items are generated -->
                     </ul>
-                </div>                   
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-3" id="inventory">
+                <div class="card">
+                    <div class="card-header">Inventar</div>
+                    <ul class="list-group list-group-flush" id="inventory-items">
+                        <!-- items are generated -->
+                </div>
+            </div>
+            <div class="col-lg-6" id="course">
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3" id="miningBtn-Div">
+                <div class="card">
+                    <button id="miningBtn"> Mine for Coins! </button>
+                    <div class="progress hidden-div" id="miningProgressDiv">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" id="miningProgressBar" role="progressbar" style="width: 10%"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     </div>
     
     <!-- MODAL for entering username -->

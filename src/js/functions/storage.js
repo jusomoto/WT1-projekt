@@ -11,7 +11,11 @@ exports.storageClass = (function () {
     var bitCoinsValue = 0;
     var availableHardware = [];
     var dollarValue = 10000;
+<<<<<<< HEAD
     var username = '';
+=======
+    var course = 1;
+>>>>>>> master
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
@@ -25,6 +29,10 @@ exports.storageClass = (function () {
 
     var getDollarValue = function(){
         return dollarValue;
+    };
+
+    var getStartCourse = function(){
+        return course;
     };
   
     var canItemBeBought = function(id) {
@@ -60,6 +68,50 @@ exports.storageClass = (function () {
         return availableHardware;
     }
 
+    var setCourse = function(courseExt){
+        course = courseExt;
+    }
+
+    var getCourse = function (){
+        return course;
+    }
+
+    var canUsdBeChanged = function(usd){
+
+        if(usd <= dollarValue){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    var changeBtcToUsd = function(usd,btc){
+        bitCoinsValue = bitCoinsValue - btc;
+        dollarValue = dollarValue + usd;
+    }
+    var changeUsdToBtc = function(usd,btc){
+        dollarValue = dollarValue - usd;
+        bitCoinsValue = bitCoinsValue + btc;
+    }
+
+    var canBtcBeChanged = function(usd){
+        if(usd <= bitCoinsValue){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    var startMining = function() {
+        for(let id in availableHardware){
+            let hardWare = availableHardware[id];
+            if(hardWare.count >= 1)
+            {
+                bitCoinsValue = bitCoinsValue + hardWare.upgradeEarnings;
+            }
+        }
+    }
+    
 
     //private functions are decleared with let
 
@@ -95,6 +147,14 @@ exports.storageClass = (function () {
         canItemBeBought: canItemBeBought,
         buyItem: buyItem,
         setUsername: setUsername,
-        getUsername: getUsername
+        getUsername: getUsername,
+        setCourse: setCourse,
+        getCourse: getCourse,
+        canUsdBeChanged: canUsdBeChanged,
+        canBtcBeChanged: canBtcBeChanged,
+        changeUsdToBtc: changeUsdToBtc,
+        changeBtcToUsd: changeBtcToUsd,
+        getStartCourse: getStartCourse,
+        startMining: startMining
     }
   })();
