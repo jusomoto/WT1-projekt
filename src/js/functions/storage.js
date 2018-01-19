@@ -91,8 +91,8 @@ exports.storageClass = (function () {
         bitCoinsValue = bitCoinsValue + btc;
     }
 
-    var canBtcBeChanged = function(usd){
-        if(usd <= bitCoinsValue){
+    var canBtcBeChanged = function(btc){
+        if(btc <= bitCoinsValue){
             return true;
         }
         else{
