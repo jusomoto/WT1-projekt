@@ -1,3 +1,4 @@
+var highscore = require('./highscore.js');
 exports.redrawScreen = (function () {
     let storage = undefined;
     let shop = undefined;
@@ -43,6 +44,11 @@ exports.redrawScreen = (function () {
         }
     }
 
+    var renderHighscore = function() {
+        var highscoreJson = highscore.getHighscore();
+        console.log(highscoreJson);
+    }
+
     var renderShop = function(){
         let hardware = storage.storageClass.getHardware();
         $('#shop-items').empty()
@@ -67,7 +73,8 @@ exports.redrawScreen = (function () {
         updateScreen: updateScreen,
         renderCurrentInventory: renderCurrentInventory,
         renderShop: renderShop,
-        renderUserProfile: renderUserProfile
+        renderUserProfile: renderUserProfile,
+        renderHighscore: renderHighscore
     }
 
 })();

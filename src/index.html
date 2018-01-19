@@ -2,10 +2,12 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Index</title>
+        <title>Be a Mineonaire</title>
         <!-- CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">        
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <!-- FONT-AWESOME Icons -->
         <!-- JS -->
         <script src="bundle.min.js"></script>  
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
@@ -20,9 +22,14 @@
             <div class="col-lg-3">
                 <div id="profile" class="card">
                     <div class="card-block">
-                        <span id="username-txt">Username</span><br>
+                        <span id="username-txt"></span><br>
                         <span>$: <span id="usd-amount"></span></span>
                         <span><img id="btc-logo" src="img/btc-logo.png" alt="BTC"/>: <span id="btc-amount">5.1023</span></span>
+                        <span>
+                            <button id="highscore-btn" type="button" class="btn btn-secondary highscore-icon icon-btn" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                <i class="fal fa-trophy-alt"></i>
+                            </button>
+                        </span>
                     </div>
                 </div>
             </div>
@@ -67,28 +74,57 @@
         </div>
     </div>
     
-    </body>
-    <div id="chart" style="width:800px; height:400px;"></div>
-
+    <!-- MODAL for entering username -->
     <div class="modal" id="username-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
+            <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title">Enter Username</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title">Enter Username</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
-              </button>
+                </button>
             </div>
             <div class="modal-body">
-              <p>Please enter a username</p>
+                <p>Please enter a username</p>
                 <div class="form-group">
                     <input type="text" class="form-control" id="input-username" placeholder="Enter a username">
                 </div>
             </div>
             <div class="modal-footer">
-              <button type="button" id="save-user-btn" class="btn btn-primary">Save</button>
+                <button type="button" id="save-user-btn" class="btn btn-primary">Save</button>
             </div>
-          </div>
+            </div>
         </div>
-      </div>
+        </div>
+
+
+    <!-- MODAL for entering username -->
+    <div class="modal" id="highscore-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Highscore</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover ">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Time</th>
+                                <th scope="col">Money</th>
+                            </tr>
+                        </thead>
+                        <tbody id="highscore-table-body">
+                            <!-- auto-generated -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
     </html>

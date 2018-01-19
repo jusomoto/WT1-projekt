@@ -75,12 +75,12 @@ exports.storageClass = (function () {
           }
     }
 
-    let setUsername = function(username) {
-        this.username = username;
+    let setUsername = function(user) {
+        username = user;
     }
 
     let getUsername = function() {
-        return this.username;
+        return username;
     }
 
     // Explicitly reveal public pointers to the private functions 

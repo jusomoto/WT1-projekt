@@ -64,3 +64,12 @@ img.logo {
     pointer-events: none;
 
 }
+
+#highscore-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+.icon-btn {
+    padding: 5px 7px;
+}
