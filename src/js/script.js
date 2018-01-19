@@ -21,7 +21,7 @@ $(document).ready(function() {
   change.changeCurrency(storage,redraw);
   let intervallCounter = 0;
 
-  eventHandler.triggerNews(0, "steigung");
+  //eventHandler.triggerNews(0, "steigung");
   let intervall = setInterval(function() {
     intervallCounter++;
     time.timeTick(storage, redraw);
