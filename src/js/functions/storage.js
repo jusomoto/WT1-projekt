@@ -69,6 +69,23 @@ exports.storageClass = (function () {
         return availableHardware;
     }
 
+    var reduceCounterOfPc = function(counter, item) {
+        availableHardware.forEach(function(elem) {
+            if(elem.name == item) {
+                if( elem.count < counter) {
+                    elem.count = 0;
+                } else {
+                    elem.count = elem.count - counter;
+                }
+                elem.upgradeEarnings = elem.count * elem.miningEarnings;
+            }
+        });
+    }
+
+    var reduceUsdValue = function(amount) {
+        dollarValue = dollarValue - amount;
+    }
+
     var setCourse = function(courseExt){
         course = courseExt;
     }
@@ -178,6 +195,8 @@ exports.storageClass = (function () {
         changeBtcToUsd: changeBtcToUsd,
         getStartCourse: getStartCourse,
         startMining: startMining,
+        reduceCounterOfPc: reduceCounterOfPc,
+        reduceUsdValue: reduceUsdValue,
         getCurrentDay: getCurrentDay,
         increaseCurrentDay: increaseCurrentDay,
         increaseGameTime: increaseGameTime,
