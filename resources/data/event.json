@@ -1,0 +1,25 @@
+{
+    "negativevent" :[
+        {
+            "id": 0,
+            "nachricht": "Du hattest einen Autounfall, aber Glück im Unglück dir ist nichts passiert, aber dein Auto ist Schrott, du wirst wohl ein neues kaufen müssen.",
+            "faktor": "5000 USD"
+        },
+        {
+            "id": 1 ,
+            "nachricht": "Ohje, ein paar von deinen PCs sind kaputt gegenagen, leider ist bei denen nichts mehr zu retten.",
+            "faktor": "3 PCs" 
+        },
+        {
+            "id": 2 ,
+            "nachricht": "Ein Pech, während du nicht da warst ist jemand eingebrochen und teure Mining PCs fehlen!",
+            "faktor": "4 PCs",
+        },
+        {
+            "id": 3,
+            "nachricht": "Deine Wohnung wird langsam zu klein für das ganze Equipment, zeit umzuziehen.",
+            "faktor": "4000 USD + Miete rauf"
+        }
+    ]
+
+}

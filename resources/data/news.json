@@ -1,0 +1,70 @@
+{
+	"steigung": [
+		{
+			"id": 0,
+			"headline": "Bitcoin? Der neue Hit im Internet!",
+			"body": "Bitcoin ist eine neue Cryptowährung, die einfach und schnelle überweisungen möglich machen soll. Einen Bitcoin bekommt man derzeit umgerechnet für 1 Cent."
+		},
+		{
+			"id": 1,
+			"headline": "Bitcoin jetzt soviel wert wie eine Wurstsemmel!",
+			"body": "Vor nicht allzu viel Zeit lag ein Bitcoin noch auf einem Hundertstel des derzeitigen Preises."
+		},
+		{
+			"id": 2,
+			"headline": "Der Aufstieg der Cryptowährungen!",
+			"body": "In Rekorschnelle steigt derzeit der Wert des Bitcoins, Kritiger meinen es handelt sich um eine Blase."
+		},
+		{
+			"id": 3,
+			"headline": "Bitcoin knackt 100$!",
+			"body": "Ein neues Rekordhoch für die noch nicht etablierte Währung. Keiner weiß wie sie sich noch entwickelt."
+		},
+		{
+			"id": 4,
+			"headline": "1000$ für eine Digitale Münze? ",
+			"body": "So schnell wie noch nie ist das digitale Gold gestiegen und keiner weiß ob er sein Limit erreicht hat."
+		},
+		{
+			"id": 5,
+			"headline": "Bitcoin im fünfstelligen Bereich.",
+			"body": "Um die 10.000$ muss man derzeit für die Digitale Anlage hinlegen, Kritiger sind weiterhin skeptisch."
+		}
+	],
+	"crash": [
+		{
+			"id": 0,
+			"headline": "Bitcoin erleidet starken Rückschlag!",
+			"body": "So schnell wie er stieg, sank er auch wieder. Ist das das Ende der digitalen Währung?"
+		},
+		{
+			"id": 1,
+			"headline": "Starker Einbruch der Cryptowährungen!",
+			"body": "Tausende Leute verloren heute Nacht viel Geld, und es ist kein Ende in Sicht."
+		},
+		{
+			"id": 2,
+			"headline": "Bitcoin aus?!",
+			"body": "Das digitale Gold fiehl plötzlich erheblich, Kritiger reden vom Ende der Bitcoin Era."
+		}
+	],
+	"misc": [
+		{
+			"id": 0,
+			"headline": "Wie Profitabel ist Minen?",
+			"body": "Klicken sie hier! Und erfahren sie das Geheimnis des Minens!"
+		},
+		{
+			"id": 1,
+			"headline": "Bitcoin Miner treiben Grafikkartenpreise in die Höhe!",
+			"body": "Die Beliebtheit der Cryptowährung wirkt sich stark auf die Grafikkartenpreise aus, Gamer weltweit sind entrüstet."
+		}
+	],
+	"technik": [
+		{
+			"id": 0,
+			"headline": "Neue Technik Errungenschafft, der Quantecomputer.",
+			"body": "Diese neue Art des Rechners soll um ein Vielfaches schneller sein als klassiche Rechner."
+		}
+	]
+}
