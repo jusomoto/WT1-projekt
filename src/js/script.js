@@ -13,6 +13,7 @@ var change = require('./functions/change.js')
 var highscore = require('./functions/highscore.js');
 var time = require('./functions/time.js');
 var constants = require("./config/config.js");
+var validation = require('./functions/validation.js');
 
 $(document).ready(function() {
 
@@ -28,6 +29,18 @@ $(document).ready(function() {
         clearInterval(intervall);
     }
   }, constants.REFRESH_RATE);
+
+  let validationIntervall = setInterval(function(){
+    storage.storageClass.increaseGameTime();
+    if(validation.isGameOver(storage)) {
+      //todo add win
+      alert("You won!");
+      clearInterval(validationIntervall);
+    }
+    else {
+      //todo add loose
+    }
+  }, 1000);
 
   $("#miningBtn").click(miningBtnClicked);
 

@@ -16,6 +16,7 @@ exports.storageClass = (function () {
     var username = '';
     var course = constants.START_COURSE_VALUE;
     var currentDay = moment(constants.START_DATE);
+    var gameTimeInSeconds = 0;
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
@@ -148,6 +149,14 @@ exports.storageClass = (function () {
         return currentDay;
     }
 
+    var increaseGameTime = function() {
+        gameTimeInSeconds++;
+    }
+
+    var getGameTime = function() {
+        return gameTimeInSeconds;
+    }
+
     // Explicitly reveal public pointers to the private functions 
     // that we want to reveal publicly
   
@@ -170,6 +179,8 @@ exports.storageClass = (function () {
         getStartCourse: getStartCourse,
         startMining: startMining,
         getCurrentDay: getCurrentDay,
-        increaseCurrentDay: increaseCurrentDay
+        increaseCurrentDay: increaseCurrentDay,
+        increaseGameTime: increaseGameTime,
+        getGameTime: getGameTime
     }
   })();
