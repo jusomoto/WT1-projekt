@@ -8,6 +8,7 @@ var storage = require('./functions/storage.js');
 var redraw = require('./functions/redrawScreen.js');
 var course = require('./functions/kurs.js');
 var change = require('./functions/change.js')
+var eventHandler = require('./functions/eventHandler.js')
 var highscore = require('./functions/highscore.js');
 
 const MINING_DURATION_MS = 2000;
@@ -78,6 +79,10 @@ var x =function() {
         shop.createShop(storage, redraw);
         highscore.getDummyData();
         highscore.addUserToHighscore('ungerdunger', 10000, 13000);
+        eventHandler.initJson().done(() => {
+          //eventHandler.triggerNews(0, "steigung");
+          //eventHandler.triggerEvent(storage);
+        });
         redraw.redrawScreen.initFunction(storage, shop);
         redraw.redrawScreen.updateScreen();
         redraw.redrawScreen.renderHighscore();
@@ -137,6 +142,7 @@ function showMiningAlertForSeconds(earnedBTC) {
 function hideMiningAlert(){
     $('#miningAlert').fadeOut(FADE_OUT_MINING_ALERT);
 }
+
 
 window.onbeforeunload = confirmExit;
 function confirmExit() {
