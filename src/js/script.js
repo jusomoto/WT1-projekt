@@ -4,9 +4,15 @@ window.$ = window.jQuery;
 var shop = require('./functions/shop.js');
 var storage = require('./functions/storage.js');
 var redraw = require('./functions/redrawScreen.js');
+var course = require('./functions/kurs.js');
+var change = require('./functions/change.js')
 //var bootstrap = require('bootstrap');
 
 $(document).ready(function(){
+  course.runCourseByIntervall(storage);
+  change.changeCurrency(storage,redraw);
+
+
 });
 
 (function() {
