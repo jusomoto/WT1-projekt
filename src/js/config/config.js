@@ -14,3 +14,9 @@ define("START_DATE", moment([2017, 1, 1]).month(1).format("YYYY-MM-DD"));
 define("START_BTC_VALUE", 0);
 define("START_DOLLAR_VALUE", 10000);
 define("START_COURSE_VALUE", 1);
+
+define("MINING_DURATION_MS", 2000);
+define("MINING_LOADER_RESPONSE", 100);
+define("SHOW_MINING_ALERT_MS", 5000);
+define("FADE_IN_MINING_ALERT", 400);
+define("FADE_OUT_MINING_ALERT", 200);
