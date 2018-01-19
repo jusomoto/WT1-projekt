@@ -19,7 +19,7 @@ exports.redrawScreen = (function () {
         let currentUSD = $("#currentUSD_value_span");
         let currentBTC = $("#currentBitcoin_value_span");
         currentUSD.text(storage.storageClass.getDollarValue());
-        currentBTC.text(storage.storageClass.getBitcoinValue());
+        currentBTC.text(storage.storageClass.getBitcoinValue().toFixed(5));
     };
 
     var renderCurrentInventory = function(){
@@ -29,12 +29,36 @@ exports.redrawScreen = (function () {
             if (hardware.hasOwnProperty(key)) {
                 let element = hardware[key];
                 if(element.count > 0){
-                    var htmlBody = "<div><button type=\"button\" class=\"btn btn-secondary \" id='buy-" + element.id + "'>Buy " + element.name + "</button><span>+ " + element.upgradeEarnings + " BTC</span></div>";
+                    var htmlBody = "<div><button type=\"button\" class=\"btn btn-secondary \" id='upgrade-" + element.id + "'>Upgrade " + element.name + "</button><span>+ " + element.upgradeEarnings + " BTC</span></div>";
                     $('#inventory-items').html($('#inventory-items').html() + htmlBody);
                 }
             }
         }
+        addEventListenerInventory();
     }
+
+    var addEventListenerInventory = function () {
+        let inventoryItems = $("#inventory-items").children();
+    
+        for (let key in inventoryItems) {
+            let miningItem = inventoryItems[key].children;
+            for(let key in miningItem)
+            {
+                if (miningItem[key].type == "button") {
+                    miningItem[key].addEventListener("click", inventoryButtonClicked)
+                }
+            }
+        }
+    }
+
+    let inventoryButtonClicked = function(element) {
+        // let buttonID = element.target.id
+        // buttonID = buttonID.replace("buy-", "");
+        // if(storage.storageClass.canItemBeBought(buttonID)){
+        //     storage.storageClass.buyItem(buttonID);
+        //     redraw.redrawScreen.updateScreen();
+        // }
+    };
 
     var renderShop = function(){
         let hardware = storage.storageClass.getHardware();
@@ -59,6 +83,23 @@ exports.redrawScreen = (function () {
         $( "#course" ).html(courseValue);
     }
     
+    var disableWholeShop = function()
+    {  
+        let shopItems = $("#shop-items").children();
+        for(let i in shopItems)
+        {
+            let shopItemDiv = shopItems[i].children;
+            for(let j in shopItemDiv)
+            {
+                let element = shopItemDiv[j];
+                if(element.classList != undefined)
+                {
+                    element.classList.remove('disabled');
+                    element.classList.add('disabled');
+                }
+            }
+        }
+    }
 
     return{
         initFunction: initFunction,
@@ -66,7 +107,8 @@ exports.redrawScreen = (function () {
         updateScreen: updateScreen,
         renderCurrentInventory: renderCurrentInventory,
         renderShop: renderShop,
-        courseUpdate: courseUpdate
+        courseUpdate: courseUpdate,
+        disableWholeShop: disableWholeShop
     }
 
 })();

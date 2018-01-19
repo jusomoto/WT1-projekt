@@ -98,6 +98,16 @@ exports.storageClass = (function () {
             return false;
         }
     }
+    var startMining = function() {
+        for(let id in availableHardware){
+            let hardWare = availableHardware[id];
+            if(hardWare.count >= 1)
+            {
+                bitCoinsValue = bitCoinsValue + hardWare.upgradeEarnings;
+            }
+        }
+    }
+    
 
     //private functions are decleared with let
 
@@ -130,6 +140,7 @@ exports.storageClass = (function () {
         canBtcBeChanged: canBtcBeChanged,
         changeUsdToBtc: changeUsdToBtc,
         changeBtcToUsd: changeBtcToUsd,
-        getStartCourse: getStartCourse
-     }
+        getStartCourse: getStartCourse,
+        startMining: startMining
+    }
   })();
