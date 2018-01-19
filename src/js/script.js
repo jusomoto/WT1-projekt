@@ -137,3 +137,8 @@ function showMiningAlertForSeconds(earnedBTC) {
 function hideMiningAlert(){
     $('#miningAlert').fadeOut(FADE_OUT_MINING_ALERT);
 }
+
+window.onbeforeunload = confirmExit;
+function confirmExit() {
+    return "You have attempted to leave this page. Are you sure?";
+}
