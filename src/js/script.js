@@ -15,6 +15,7 @@ var highscore = require('./functions/highscore.js');
 var time = require('./functions/time.js');
 var constants = require("./config/config.js");
 var validation = require('./functions/validation.js');
+var drawChart = require("./functions/chart.js");
 
 $(document).ready(function() {
 
@@ -24,6 +25,7 @@ $(document).ready(function() {
   //eventHandler.triggerNews(0, "steigung");
   let intervall = setInterval(function() {
     intervallCounter++;
+    drawChart.drawChart(storage);
     time.timeTick(storage, redraw);
     course.runCourseByIntervall(storage);
     redraw.redrawScreen.updateScreen();

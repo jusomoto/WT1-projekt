@@ -17,13 +17,16 @@ exports.storageClass = (function () {
     var course = constants.START_COURSE_VALUE;
     var currentDay = moment(constants.START_DATE);
     var gameTimeInSeconds = 0;
+    var plotPoints = [];
+    var datePoints =[];
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
         bitCoinsValue = bitCoinsValue + increaseValue;    
         return bitCoinsValue;
     };
-  
+    
+
     var getBitcoinValue = function() {
         return bitCoinsValue;
     };
@@ -89,6 +92,7 @@ exports.storageClass = (function () {
 
     var setCourse = function(courseExt){
         course = courseExt;
+        plotPoints.push(course); 
     }
 
     var getCourse = function (){
@@ -134,6 +138,13 @@ exports.storageClass = (function () {
         return earnedBTC;
     }
     
+    var getPlotPoints = function(){
+        return plotPoints;
+    };
+    var getDatePoints = function(){
+        return datePoints;
+    };
+
     var setTime
 
     //private functions are decleared with let
@@ -169,6 +180,7 @@ exports.storageClass = (function () {
 
     var increaseGameTime = function() {
         gameTimeInSeconds++;
+        datePoints.push(gameTimeInSeconds);
     }
 
     var getGameTime = function() {
@@ -201,6 +213,8 @@ exports.storageClass = (function () {
         getCurrentDay: getCurrentDay,
         increaseCurrentDay: increaseCurrentDay,
         increaseGameTime: increaseGameTime,
-        getGameTime: getGameTime
+        getGameTime: getGameTime,
+        getPlotPoints: getPlotPoints,
+        getDatePoints: getDatePoints
     }
   })();
