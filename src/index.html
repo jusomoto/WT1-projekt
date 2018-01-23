@@ -28,17 +28,39 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-block">
-                                <h4 class="card-title">Umtausch:</h4>
-                                <br>Kurs zu USD:<c id ="Kurs"></c>
-                                <form>
-                                    Bitcoins:
-                                    <input type="text" name="Bitcoin" id="btcInput" />
-                                    <br> USD:
-                                    <input type="text" name="USD" id="usdInput" />
-                                    <br><br>
-                                    <input class="btn btn-secondary" type="button" id="changeBtt" value="Umtauschen" />
-                                </form>
-                            </div>
+                                    <h4 class="card-title">Umtausch:</h4>
+                                    <br>1 BTC =
+                                    <b id="course"></b>&nbsp;USD
+                                    <form>
+                                        Bitcoins:
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <input class="btn btn-secondary" type="button" id="maxBtc" value="Max" />
+                                            </span>
+                                            <input name="Bitcoin" id="btcInput" type="number" />
+                                        </div>
+                                        <div class="col-lg-3 alert alert-warning hidden-div center-text" id="btcError" role="alert">
+                                            Not enough Bitcoin!
+                                        </div>
+                                        <br> USD:
+                                        <div class="input-group">
+                                            <span class="input-group-btn">
+                                                <input class="btn btn-secondary" type="button" id="maxUsd" value="Max" />
+                                            </span>
+                                            <input type="number" name="USD" id="usdInput" />
+                                        </div>
+            
+                                        <div class="col-lg-3 alert alert-warning hidden-div center-text" id="usdError" role="alert">
+                                            Not enough Dollar!
+                                        </div>
+                                        <br>
+                                        <br>
+                                        <input class="btn btn-secondary" type="button" id="changeBtt" value="Umtauschen" />
+                                        <div class="col-lg-3 alert warning hidden-div center-text" id="InputError" role="alert">
+                                            Only fill in one field!
+                                        </div>
+                                    </form>
+                                </div>
                         </div>
                     </div>
                     <div class="col-lg-12" id="inventory">
@@ -109,7 +131,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title">Enter Username</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -124,8 +146,6 @@
                 </div>
             </div>
         </div>
-
-
         <!-- MODAL for entering username -->
         <div class="modal" id="highscore-modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">

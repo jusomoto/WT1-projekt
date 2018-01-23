@@ -15,15 +15,19 @@ exports.redrawScreen = (function () {
         renderShop();
         renderUserProfile();
         courseUpdate();
+        deleteWarnings();
     };
 
     var updateUSDAndBitcoins = function(){
         let currentUSD = $("#usd-amount");
         let currentBTC = $("#btc-amount");
-        currentUSD.text(storage.storageClass.getDollarValue());
-        currentBTC.text(storage.storageClass.getBitcoinValue().toFixed(5));
+        currentUSD.text(storage.storageClass.getDollarValue().toFixed(2));
+        currentBTC.text(storage.storageClass.getBitcoinValue().toFixed(4));
     };
 
+    var deleteWarnings = function(){
+       $(".alert-warning").hide();
+    }
     var renderCurrentInventory = function(){
         let hardware = storage.storageClass.getHardware();
         $('#inventory-items').empty()
@@ -89,7 +93,7 @@ exports.redrawScreen = (function () {
     }
 
     var courseUpdate = function(){
-        let courseValue = storage.storageClass.getCourse()
+        let courseValue = storage.storageClass.getCourse().toFixed(4)
         $( "#course" ).html(courseValue);
     }
     
@@ -120,7 +124,8 @@ exports.redrawScreen = (function () {
         renderUserProfile: renderUserProfile,
         renderHighscore: renderHighscore,
         courseUpdate: courseUpdate,
-        disableWholeShop: disableWholeShop
+        disableWholeShop: disableWholeShop,
+        deleteWarnings: deleteWarnings,
     }
 
 })();
