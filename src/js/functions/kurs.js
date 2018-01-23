@@ -5,6 +5,5 @@ module.exports = {
         var courseExt = storage.storageClass.getStartCourse();
         courseExt = courseExt * (Math.random() + constants.PROB_FOR_COIN_RISE);
         storage.storageClass.setCourse(courseExt);
-        console.log(courseExt);
     },
 }
