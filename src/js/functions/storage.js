@@ -50,6 +50,7 @@ exports.storageClass = (function () {
 
     var buyItem = function(id){
         let clickedShopItem = findItemByID(id);
+        console.log(buyItem.name);
         if(canItemBeBought){
             clickedShopItem.count++;
             dollarValue = dollarValue - clickedShopItem.price;
@@ -58,11 +59,11 @@ exports.storageClass = (function () {
     }
 
     var setInitHardware = function(hardwareArray) {
-        for(var item in hardwareArray)
-        {
-            availableHardware.push(new Hardware(hardwareArray[item].id, hardwareArray[item].name, hardwareArray[item].price, 
-                hardwareArray[item].currency, hardwareArray[item].miningEarnings, hardwareArray[item].upgradeEarnings, 0));
-        }
+        hardwareArray.forEach((item) => {
+            availableHardware.push(new Hardware(item.id, item.name, item.price, 
+                item.currency, item.miningEarnings, item.upgradeEarnings, 0));
+        });
+            
     };
     
     var getHardware = function() {
@@ -112,8 +113,8 @@ exports.storageClass = (function () {
         bitCoinsValue = bitCoinsValue + btc;
     }
 
-    var canBtcBeChanged = function(usd){
-        if(usd <= bitCoinsValue){
+    var canBtcBeChanged = function(btc){
+        if(btc <= bitCoinsValue){
             return true;
         }
         else{

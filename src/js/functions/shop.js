@@ -7,17 +7,7 @@ module.exports = {
         });
     },
     addEventListener: function () {
-        let shopItems = $("#shop-items").children();
-    
-        for (let key in shopItems) {
-            let miningItem = shopItems[key].children;
-            for(let key in miningItem)
-            {
-                if (miningItem[key].type == "button") {
-                    miningItem[key].addEventListener("click", shopButtonClicked)
-                }
-            }
-        }
+        $("button.buy-btn").on('click', shopButtonClicked);
     },
 };
 
@@ -25,14 +15,12 @@ let storage = undefined;
 let redraw = undefined;
 
 let shopButtonClicked = function(element) {
-    console.log("dollar value before = " + storage.storageClass.getDollarValue());
-    let buttonID = element.target.id
+    let buttonID = element.currentTarget.id;
     buttonID = buttonID.replace("buy-", "");
-    if(storage.storageClass.canItemBeBought(buttonID)){
+    if(storage.storageClass.canItemBeBought(buttonID)) {
         storage.storageClass.buyItem(buttonID);
         redraw.redrawScreen.updateScreen();
     }
-    console.log("dollar value after = " + storage.storageClass.getDollarValue());
 };
 
 

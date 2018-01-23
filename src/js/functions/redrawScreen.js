@@ -31,7 +31,9 @@ exports.redrawScreen = (function () {
             if (hardware.hasOwnProperty(key)) {
                 let element = hardware[key];
                 if(element.count > 0){
-                    var htmlBody = "<div><button type=\"button\" class=\"btn btn-secondary \" id='upgrade-" + element.id + "'>Upgrade " + element.name + "</button><span>+ " + element.upgradeEarnings + " BTC</span></div>";
+                    // <button type=\"button\" class=\"btn btn-secondary inventory-item-btn\" 
+                    // id='upgrade-" + element.id + "'>Upgrade " + element.name + "</button>
+                    var htmlBody = "<div>" + element.count + " " + element.name+" <span>+ " + element.upgradeEarnings + " BTC</span></div>";
                     $('#inventory-items').html($('#inventory-items').html() + htmlBody);
                 }
             }
@@ -41,27 +43,17 @@ exports.redrawScreen = (function () {
 
     var renderUserProfile = function() {
         let username = storage.storageClass.getUsername();
-        if(username) {
+        if (username) {
             $('#username-txt').text(username);
         }
     }
 
     var renderHighscore = function() {
         var highscoreJson = highscore.getHighscore();
-        console.log(highscoreJson);
     }
+
     var addEventListenerInventory = function () {
-        let inventoryItems = $("#inventory-items").children();
-    
-        for (let key in inventoryItems) {
-            let miningItem = inventoryItems[key].children;
-            for(let key in miningItem)
-            {
-                if (miningItem[key].type == "button") {
-                    miningItem[key].addEventListener("click", inventoryButtonClicked)
-                }
-            }
-        }
+        let inventoryItems = $(".inventory-item-btn").on("click", inventoryButtonClicked);
     }
 
     let inventoryButtonClicked = function(element) {
@@ -75,15 +67,20 @@ exports.redrawScreen = (function () {
 
     var renderShop = function(){
         let hardware = storage.storageClass.getHardware();
-        $('#shop-items').empty()
+        $('#shop-items').empty();
         for (let key in hardware) {
             if (hardware.hasOwnProperty(key)) {
                 let element = hardware[key];
-                let style = "btn btn-secondary";
-                if(element.price > storage.storageClass.getDollarValue()){
-                    style = style + " disabled"
+                let style = "btn buy-btn";
+                if (element.price > storage.storageClass.getDollarValue()){
+                    style = style + " btn-secondary disabled";
+                } else {
+                    style += " btn-success";
                 }
-                var htmlBody = "<div><button type=\"button\" class=\""+style+"\" id='buy-" + element.id + "'>Buy " + element.name + "</button><span>+ " + element.miningEarnings + " BTC</span></div>";
+                var htmlBody = "<div class=\"shop-item-container row\"><div class=\"col-lg-9\">"+
+                element.name + "<span>+ " + 
+                element.miningEarnings + " BTC</span></div><div class=\"col-lg-3\"><button type=\"button\" class=\""+
+                style+"\" id='buy-" + element.id + "'><i class=\"fal fa-shopping-cart\"></i></button></div></div>";
                 $('#shop-items').html($('#shop-items').html() + htmlBody);
                 
             }
