@@ -10,16 +10,19 @@ var storage = require('./functions/storage.js');
 var redraw = require('./functions/redrawScreen.js');
 var course = require('./functions/kurs.js');
 var change = require('./functions/change.js')
+var eventHandler = require('./functions/eventHandler.js')
 var highscore = require('./functions/highscore.js');
 var time = require('./functions/time.js');
 var constants = require("./config/config.js");
+var validation = require('./functions/validation.js');
 
 $(document).ready(function() {
 
   change.changeCurrency(storage,redraw);
   let intervallCounter = 0;
 
-  let intervall = setInterval(function(){
+  //eventHandler.triggerNews(0, "steigung");
+  let intervall = setInterval(function() {
     intervallCounter++;
     time.timeTick(storage, redraw);
     course.runCourseByIntervall(storage);
@@ -28,6 +31,18 @@ $(document).ready(function() {
         clearInterval(intervall);
     }
   }, constants.REFRESH_RATE);
+
+  let validationIntervall = setInterval(function(){
+    storage.storageClass.increaseGameTime();
+    if(validation.isGameOver(storage)) {
+      //todo add win
+      alert("You won!");
+      clearInterval(validationIntervall);
+    }
+    else {
+      //todo add loose
+    }
+  }, 1000);
 
   $("#miningBtn").click(miningBtnClicked);
 
@@ -87,6 +102,10 @@ var x =function() {
         shop.createShop(storage, redraw);
         highscore.getDummyData();
         highscore.addUserToHighscore('ungerdunger', 10000, 13000);
+        eventHandler.initJson().done(() => {
+          //
+          //
+        });
         redraw.redrawScreen.initFunction(storage, shop);
         redraw.redrawScreen.updateScreen();
         redraw.redrawScreen.renderHighscore();
@@ -145,4 +164,10 @@ function showMiningAlertForSeconds(earnedBTC) {
 
 function hideMiningAlert(){
     $('#miningAlert').fadeOut(constants.FADE_OUT_MINING_ALERT);
+}
+
+
+window.onbeforeunload = confirmExit;
+function confirmExit() {
+    return "You have attempted to leave this page. Are you sure?";
 }

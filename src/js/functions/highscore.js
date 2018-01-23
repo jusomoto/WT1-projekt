@@ -13,7 +13,6 @@ module.exports = {
                 return 0;
             }
         });
-        console.log("AUTH", highscore);
         module.exports.saveHighscore(highscore);
     },
     saveHighscore: (highscore) => {

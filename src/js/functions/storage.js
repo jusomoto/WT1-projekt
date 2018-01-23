@@ -16,6 +16,7 @@ exports.storageClass = (function () {
     var username = '';
     var course = constants.START_COURSE_VALUE;
     var currentDay = moment(constants.START_DATE);
+    var gameTimeInSeconds = 0;
 
     //Public Functions are decleared with var
     var increaseBitcoinValue = function(increaseValue) {
@@ -49,6 +50,7 @@ exports.storageClass = (function () {
 
     var buyItem = function(id){
         let clickedShopItem = findItemByID(id);
+        console.log(buyItem.name);
         if(canItemBeBought){
             clickedShopItem.count++;
             dollarValue = dollarValue - clickedShopItem.price;
@@ -57,15 +59,32 @@ exports.storageClass = (function () {
     }
 
     var setInitHardware = function(hardwareArray) {
-        for(var item in hardwareArray)
-        {
-            availableHardware.push(new Hardware(hardwareArray[item].id, hardwareArray[item].name, hardwareArray[item].price, 
-                hardwareArray[item].currency, hardwareArray[item].miningEarnings, hardwareArray[item].upgradeEarnings, 0));
-        }
+        hardwareArray.forEach((item) => {
+            availableHardware.push(new Hardware(item.id, item.name, item.price, 
+                item.currency, item.miningEarnings, item.upgradeEarnings, 0));
+        });
+            
     };
     
     var getHardware = function() {
         return availableHardware;
+    }
+
+    var reduceCounterOfPc = function(counter, item) {
+        availableHardware.forEach(function(elem) {
+            if(elem.name == item) {
+                if( elem.count < counter) {
+                    elem.count = 0;
+                } else {
+                    elem.count = elem.count - counter;
+                }
+                elem.upgradeEarnings = elem.count * elem.miningEarnings;
+            }
+        });
+    }
+
+    var reduceUsdValue = function(amount) {
+        dollarValue = dollarValue - amount;
     }
 
     var setCourse = function(courseExt){
@@ -148,6 +167,14 @@ exports.storageClass = (function () {
         return currentDay;
     }
 
+    var increaseGameTime = function() {
+        gameTimeInSeconds++;
+    }
+
+    var getGameTime = function() {
+        return gameTimeInSeconds;
+    }
+
     // Explicitly reveal public pointers to the private functions 
     // that we want to reveal publicly
   
@@ -169,7 +196,11 @@ exports.storageClass = (function () {
         changeBtcToUsd: changeBtcToUsd,
         getStartCourse: getStartCourse,
         startMining: startMining,
+        reduceCounterOfPc: reduceCounterOfPc,
+        reduceUsdValue: reduceUsdValue,
         getCurrentDay: getCurrentDay,
-        increaseCurrentDay: increaseCurrentDay
+        increaseCurrentDay: increaseCurrentDay,
+        increaseGameTime: increaseGameTime,
+        getGameTime: getGameTime
     }
   })();

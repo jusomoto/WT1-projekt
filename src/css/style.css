@@ -95,3 +95,13 @@ img.logo {
 .center-text {
     text-align: center;
 }
+.shop-item-container {
+    position: relative;
+}
+.shop-item-container div.col-lg-2 {
+    padding-left: 0px;
+}
+
+.buy-btn {
+    padding: 2px 2px;
+}
