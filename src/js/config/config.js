@@ -8,7 +8,7 @@ function define(name, value) {
 }
 
 define("PROB_FOR_COIN_RISE", 0.55);
-define("TIME_INTERVALL", 10);
+define("TIME_INTERVALL", 287);
 define("REFRESH_RATE", 1000);
 define("START_DATE", moment([2017, 1, 1]).format("YYYY-MM-DD"));
 define("END_DATE", moment(exports.START_DATE).add(exports.TIME_INTERVALL, 'months').format("YYYY-MM-DD"));
