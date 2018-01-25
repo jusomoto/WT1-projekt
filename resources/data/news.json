@@ -2,8 +2,8 @@
 	"steigung": [
 		{
 			"id": 0,
-			"headline": "Bitcoin? Der neue Hit im Internet!",
-			"body": "Bitcoin ist eine neue Kryptowährung, die einfach und schnelle Überweisungen möglich machen soll. Einen Bitcoin bekommt man derzeit umgerechnet für 1 Dollar."
+			"headline": "Bitcoin - all the way up!",
+			"body": "Bitcoin ist eine neue Kryptowährung, die einfach und schnelle Überweisungen möglich machen soll. Einen Bitcoin bekommt man derzeit umgerechnet für 8000 Dollar."
 		},
 		{
 			"id": 1,
@@ -12,18 +12,21 @@
 		},
 		{
 			"id": 2,
-			"headline": "Bitcoin knackt 100$!",
-			"body": "Ein neues Rekordhoch für die noch nicht etablierte Währung. Keiner weiß wie sie sich noch entwickelt."
+			"headline": "Bitcoin knackt 10000$!",
+			"body": "Ein neues Rekordhoch für die noch nicht etablierte Währung. Keiner weiß wie sie sich noch entwickelt.",
+			"value": 10000
 		},
 		{
 			"id": 3,
-			"headline": "1000$ für eine Digitale Münze? ",
-			"body": "So schnell wie noch nie ist das digitale Gold gestiegen und keiner weiß ob er sein Limit erreicht hat."
+			"headline": "100 000$ für eine Digitale Münze? ",
+			"body": "So schnell wie noch nie ist das digitale Gold gestiegen und keiner weiß ob er sein Limit erreicht hat.",
+			"value": 100000
 		},
 		{
 			"id": 4,
 			"headline": "Bitcoin im fünfstelligen Bereich.",
-			"body": "Um die 10.000$ muss man derzeit für die Digitale Anlage hinlegen, Kritiker sind weiterhin skeptisch."
+			"body": "Um die 500.000$ muss man derzeit für die Digitale Anlage hinlegen, Kritiker sind weiterhin skeptisch.",
+			"value": 500000
 		}
 	],
 	"crash": [

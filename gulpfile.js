@@ -66,6 +66,8 @@ gulp.task('image', function () {
 gulp.task('html', function() {
     gulp.src('src/index.html')
     .pipe(gulp.dest('./dist/'));
+    gulp.src('src/favicon.*')
+    .pipe(gulp.dest('./dist/'));
 });
 
 gulp.task('webfonts', function() {

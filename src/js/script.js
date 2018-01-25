@@ -21,25 +21,22 @@ $(document).ready(function() {
 
   change.changeCurrency(storage,redraw);
   let intervallCounter = 0;
+  gameTick();
   let intervall = setInterval(function() {
     intervallCounter++;
-    drawChart.drawChart(storage);
-    time.timeTick(storage, redraw);
-    course.runCourseByIntervall(storage);
-    redraw.redrawScreen.updateScreen();
+    gameTick();
     if (intervallCounter > constants.TIME_INTERVALL) {
-        clearInterval(intervall);
-    }
+      clearInterval(intervall);
+  }
   }, constants.REFRESH_RATE);
 
   let validationIntervall = setInterval(function() {
     storage.storageClass.increaseGameTime();
     if(validation.isGameOver(storage)) {
       $('#gameEnd-modal').modal();
-      if(validation.isGameWon(storage)){
+      if(validation.isGameWon(storage)) {
         initGameEndPopUp(true);
-      }
-      else{
+      } else {
         initGameEndPopUp(false);
       }
       clearInterval(validationIntervall);
@@ -103,8 +100,6 @@ var x =function() {
         storage.storageClass.setInitHardware(hardwareArray);
         //from now on we can redraw the screen, because the JSON is read
         shop.createShop(storage, redraw);
-        highscore.getDummyData();
-        highscore.addUserToHighscore('ungerdunger', 10000, 13000);
         eventHandler.initJson().done(() => {
           eventHandler.triggerNews(0, "steigung");
         });
@@ -194,6 +189,13 @@ function initGameEndPopUp(isTheGameWon){
   $('#gameEndDollar').html(currentDollar);
   $('#gameEndBTC').html(currentBTC);
   $('#gameEndTime').html(currentBTC);
+}
+
+function gameTick() {
+  time.timeTick(storage, redraw);
+  course.runCourseByIntervall(storage);
+  drawChart.drawChart(storage);
+  redraw.redrawScreen.updateScreen();
 }
 
 window.onbeforeunload = confirmExit;

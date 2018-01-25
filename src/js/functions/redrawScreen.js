@@ -93,7 +93,7 @@ exports.redrawScreen = (function () {
     }
 
     var courseUpdate = function(){
-        let courseValue = storage.storageClass.getCourse().toFixed(4)
+        let courseValue = storage.storageClass.getCourse().toFixed(2)
         $( "#course" ).html(courseValue);
     }
     
@@ -115,7 +115,11 @@ exports.redrawScreen = (function () {
         }
     }
 
-    return{
+    var showRandomEvent = function() {
+
+    }
+
+    return {
         initFunction: initFunction,
         updateUSDAndBitcoins: updateUSDAndBitcoins,
         updateScreen: updateScreen,

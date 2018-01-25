@@ -9,7 +9,6 @@ module.exports = {
     }),
       $("#maxUsd").click(function(event) {
         var MaxUSD = storage.storageClass.getDollarValue();
-        console.log(MaxUSD);
         $("#usdInput").val(MaxUSD);
       }),
       $("#changeBtt").click(function(event) {
@@ -18,7 +17,7 @@ module.exports = {
         var course = storage.storageClass.getCourse();
         if (btc == "") {
           if (storage.storageClass.canUsdBeChanged(usd)) {
-            btc = usd / course;
+            btc = usd/course;
             storage.storageClass.changeUsdToBtc(usd, btc);
             redraw.redrawScreen.updateScreen();
           } else {

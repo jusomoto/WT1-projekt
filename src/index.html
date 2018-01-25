@@ -2,7 +2,10 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
         <title>Be a Mineonaire</title>
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <link rel="icon" href="favicon.png" type="image/x-icon">
         <!-- CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">        
         <link rel="stylesheet" href="css/style.css">
@@ -85,9 +88,10 @@
                             </div>
                         </div>
                     </div>
-                    <div id="Chart" style="width:600px; height:400px;"></div>
+                    <div class="col-lg-12">
+                        <div id="Chart" class="card" style="width: 100%; height:400px;"></div>
+                    </div>
                 </div>
-                
                 <!-- sidebar right -->
                 <div class="col-lg-3">
                     <div class="col-lg-12">
@@ -181,7 +185,7 @@
                     <h2 id="gameEndHeader"></h1>
                     <br>
                     <div>
-                        <table class="table">
+                        <table class="table table-responsive">
                             <thead class="thead-light">
                               <tr>
                                 <th scope="col">Username</th>
@@ -200,7 +204,7 @@
                             </tbody>
                           </table>
                     </div>
-                    <span> TODO: ADD DABBING HERE </span>
+                    <span> <img src="img/dab.png" alt="Dab" /> </span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" id="continue-mining-btn" class="btn btn-primary" data-dismiss="modal">Close!</button>
