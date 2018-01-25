@@ -188,7 +188,7 @@ function initGameEndPopUp(isTheGameWon){
   $('#gameEndUserName').html(currentUser);
   $('#gameEndDollar').html(currentDollar);
   $('#gameEndBTC').html(currentBTC);
-  $('#gameEndTime').html(currentBTC);
+  $('#gameEndTime').html(currentGameTime + "sec");
 }
 
 function gameTick() {
