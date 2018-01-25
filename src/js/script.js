@@ -33,12 +33,14 @@ $(document).ready(function() {
   let validationIntervall = setInterval(function() {
     storage.storageClass.increaseGameTime();
     if(validation.isGameOver(storage)) {
-      //todo add win
-      alert("You won!");
+      $('#gameEnd-modal').modal();
+      if(validation.isGameWon(storage)){
+        initGameEndPopUp(true);
+      }
+      else{
+        initGameEndPopUp(false);
+      }
       clearInterval(validationIntervall);
-    }
-    else {
-      //todo add loose
     }
   }, 1000);
 
@@ -82,6 +84,7 @@ $(document).ready(function() {
     $('#highscore-table-body').html(body);
     $('#highscore-modal').modal();
   });
+
 });
 
 var x =function() {
@@ -163,6 +166,33 @@ function hideMiningAlert(){
     $('#miningAlert').fadeOut(constants.FADE_OUT_MINING_ALERT);
 }
 
+function initGameEndPopUp(isTheGameWon){
+  let currentUser = storage.storageClass.getUsername();
+  let currentDollar = storage.storageClass.getDollarValue();
+  let currentBTC = storage.storageClass.getBitcoinValue();
+  let currentGameTime = storage.storageClass.getGameTime();
+  let gameEndMessage;
+  let gameEndCaption;
+
+  if(isTheGameWon){
+    highscore.addUserToHighscore(currentUser, currentGameTime, currentDollar);
+    gameEndMessage = "You did it! 1.000.000 from Bitcoins. Who thought that something like this would be possible?";
+    gameEndCaption = "Congrats";
+  }
+  else{
+    gameEndMessage = "Oh no - Time is up. And still no Mineonaire! :-(";
+    gameEndCaption = "You lost!";
+  }
+
+  $('#gameEndHeader').html(gameEndMessage);
+  $('#gameEndCaption').html(gameEndCaption);
+
+  //table stats
+  $('#gameEndUserName').html(currentUser);
+  $('#gameEndDollar').html(currentDollar);
+  $('#gameEndBTC').html(currentBTC);
+  $('#gameEndTime').html(currentBTC);
+}
 
 window.onbeforeunload = confirmExit;
 function confirmExit() {

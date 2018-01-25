@@ -9,6 +9,9 @@ module.exports = {
             return false;
         }
     },
+    isGameWon : function(storage){
+        return isMoneyOverAMillion(storage);
+    },
 }
 
 function isEndDateReached(storage){
