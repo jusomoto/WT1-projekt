@@ -20,8 +20,6 @@ $(document).ready(function() {
 
   change.changeCurrency(storage,redraw);
   let intervallCounter = 0;
-
-  //eventHandler.triggerNews(0, "steigung");
   let intervall = setInterval(function() {
     intervallCounter++;
     time.timeTick(storage, redraw);
@@ -32,7 +30,7 @@ $(document).ready(function() {
     }
   }, constants.REFRESH_RATE);
 
-  let validationIntervall = setInterval(function(){
+  let validationIntervall = setInterval(function() {
     storage.storageClass.increaseGameTime();
     if(validation.isGameOver(storage)) {
       //todo add win
@@ -103,8 +101,7 @@ var x =function() {
         highscore.getDummyData();
         highscore.addUserToHighscore('ungerdunger', 10000, 13000);
         eventHandler.initJson().done(() => {
-          //
-          //
+          eventHandler.triggerNews(0, "steigung");
         });
         redraw.redrawScreen.initFunction(storage, shop);
         redraw.redrawScreen.updateScreen();

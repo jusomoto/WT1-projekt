@@ -82,8 +82,8 @@ exports.redrawScreen = (function () {
                     style += " btn-success";
                 }
                 var htmlBody = "<div class=\"shop-item-container row\"><div class=\"col-lg-9\">"+
-                element.name + "<span>+ " + 
-                element.miningEarnings + " BTC</span></div><div class=\"col-lg-3\"><button type=\"button\" class=\""+
+                element.name + "<span> + <b>" + 
+                element.miningEarnings + " </b>BTC</span></div><div class=\"col-lg-3\"><button type=\"button\" class=\""+
                 style+"\" id='buy-" + element.id + "'><i class=\"fal fa-shopping-cart\"></i></button></div></div>";
                 $('#shop-items').html($('#shop-items').html() + htmlBody);
                 
