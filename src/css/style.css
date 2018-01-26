@@ -77,7 +77,11 @@ img.logo {
 }
 
 .hidden-div {
-    display:none
+    display: none;
+}
+
+.hidden {
+    display: none;
 }
 
 .show-div {

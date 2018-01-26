@@ -81,7 +81,7 @@
                 <!-- Main Content-->
                 <div class="col-lg-6">
                     <div class="col-lg-12 logo-container"><img class="logo" src="img/logo.png" alt="Be a Mineonaire" /></div>
-                    <div class="col-lg-12" id="news">
+                    <div class="col-lg-12" style="margin-bottom: 10px;" id="news">
                         <div class="card">
                             <div class="card-header">Newsfeed</div>
                             <div id="newsfeed-block" class="card-block">
@@ -154,7 +154,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <table class="table table-hover ">
+                        <table id="highscore-table" class="table table-hover ">
                             <thead>
                                 <tr>
                                     <th scope="col">#</th>
@@ -167,6 +167,7 @@
                                 <!-- auto-generated -->
                             </tbody>
                         </table>
+                        <div id="no-highscore-alert" class="alert alert-danger hidden" >No Highscore available</div>
                     </div>
                 </div>
             </div>

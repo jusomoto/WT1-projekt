@@ -21,6 +21,7 @@ $(document).ready(function() {
 
   change.changeCurrency(storage,redraw);
   let intervallCounter = 0;
+  highscore.initHighscore();
   gameTick();
   let intervall = setInterval(function() {
     intervallCounter++;
@@ -70,17 +71,24 @@ $(document).ready(function() {
     //highscore-table-body
     var highscoreJson = highscore.getHighscore();
     var body = '';
-    highscoreJson.players.forEach(function(elem, index) {
-      var trClass = '';
-      if(index == 0) {
-         trClass = 'table-success';
-      }
-      body += '<tr class="'+trClass+'"><th scope="row">'+(index + 1)+'</th>';
-      body += '<td>'+elem.username+'</td>';
-      body += '<td>'+elem.time+'</td>';
-      body += '<td>'+elem.money+'</td></tr>';
-    });
-    $('#highscore-table-body').html(body);
+    if(highscoreJson.players.length > 0) {
+      highscoreJson.players.forEach(function(elem, index) {
+        var trClass = '';
+        if(index == 0) {
+           trClass = 'table-success';
+        }
+        body += '<tr class="'+trClass+'"><th scope="row">'+(index + 1)+'</th>';
+        body += '<td>'+elem.username+'</td>';
+        body += '<td>'+elem.time+'</td>';
+        body += '<td>'+elem.money+'</td></tr>';
+      });
+      $('#highscore-table-body').html(body);
+      $('#no-highscore-alert').css("display", "none");
+      $('#highscore-table').css('display', 'table');
+    } else {
+      $('#no-highscore-alert').css("display", "block");
+      $('#highscore-table').css('display', 'none');
+    }
     $('#highscore-modal').modal();
   });
 

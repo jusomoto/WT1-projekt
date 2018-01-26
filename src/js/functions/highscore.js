@@ -56,5 +56,11 @@ module.exports = {
             ]
         };
         module.exports.saveHighscore(highscore);
+    },
+    initHighscore: () => {
+        var highscore = {
+            players: []
+        };
+        module.exports.saveHighscore(highscore);
     }
 };
