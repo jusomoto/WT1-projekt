@@ -37,7 +37,7 @@ exports.redrawScreen = (function () {
                 if(element.count > 0){
                     // <button type=\"button\" class=\"btn btn-secondary inventory-item-btn\" 
                     // id='upgrade-" + element.id + "'>Upgrade " + element.name + "</button>
-                    var htmlBody = "<div>" + element.count + " " + element.name+" <span>+ " + element.upgradeEarnings + " BTC</span></div>";
+                    var htmlBody = "<div>" + element.count + " " + element.name+" <span>+ " + element.upgradeEarnings.toFixed(4) + " BTC</span></div>";
                     $('#inventory-items').html($('#inventory-items').html() + htmlBody);
                 }
             }
