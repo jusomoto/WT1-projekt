@@ -13,7 +13,7 @@ define("REFRESH_RATE", 10000);
 define("START_DATE", moment([2017, 1, 1]).format("YYYY-MM-DD"));
 define("END_DATE", moment(exports.START_DATE).add(exports.TIME_INTERVALL, 'months').format("YYYY-MM-DD"));
 define("START_BTC_VALUE", 0);
-define("START_DOLLAR_VALUE", 10000);
+define("START_DOLLAR_VALUE", 5000);
 define("START_COURSE_VALUE", 8000);
 define("END_OF_GAME_MONEY", 1000000);
 

@@ -172,7 +172,7 @@ function initGameEndPopUp(isTheGameWon){
   let gameEndCaption;
 
   if(isTheGameWon){
-    highscore.addUserToHighscore(currentUser, currentGameTime, currentDollar);
+    highscore.addUserToHighscore(currentUser, currentGameTime, currentDollar.toFixed(2));
     gameEndMessage = "You did it! 1.000.000 from Bitcoins. Who thought that something like this would be possible?";
     gameEndCaption = "Congrats";
   }
@@ -186,8 +186,8 @@ function initGameEndPopUp(isTheGameWon){
 
   //table stats
   $('#gameEndUserName').html(currentUser);
-  $('#gameEndDollar').html(currentDollar);
-  $('#gameEndBTC').html(currentBTC);
+  $('#gameEndDollar').html(currentDollar.toFixed(2));
+  $('#gameEndBTC').html(currentBTC.toFixed(4));
   $('#gameEndTime').html(currentGameTime + "sec");
 }
 
