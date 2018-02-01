@@ -1,10 +1,11 @@
+// Libs
 window.jQuery = require("jquery");
 import $ from 'jquery';
-import { storageClass } from "./functions/storage";
-import { redrawScreen } from "./functions/redrawScreen";
 window.Tether = require("tether");
 window.$ = window.jQuery;
 var bootstrap = require("bootstrap");
+
+//Classes
 var shop = require('./functions/shop.js');
 var storage = require('./functions/storage.js');
 var redraw = require('./functions/redrawScreen.js');

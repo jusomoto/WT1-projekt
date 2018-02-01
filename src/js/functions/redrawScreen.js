@@ -21,8 +21,8 @@ exports.redrawScreen = (function () {
     var updateUSDAndBitcoins = function(){
         let currentUSD = $("#usd-amount");
         let currentBTC = $("#btc-amount");
-        currentUSD.text(storage.storageClass.getDollarValue().toFixed(2));
-        currentBTC.text(storage.storageClass.getBitcoinValue().toFixed(4));
+        currentUSD.text(storage.storageClass.getDollarValue());
+        currentBTC.text(storage.storageClass.getBitcoinValue());
     };
 
     var deleteWarnings = function(){
@@ -93,8 +93,8 @@ exports.redrawScreen = (function () {
     }
 
     var courseUpdate = function(){
-        let courseValue = storage.storageClass.getCourse().toFixed(2)
-        $( "#course" ).html(courseValue);
+        let courseValue = storage.storageClass.getCourse();
+        $("#course").html(courseValue);
     }
     
     var disableWholeShop = function()

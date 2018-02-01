@@ -1,3 +1,4 @@
+var redrawScreen = require('./redrawScreen');
 var Hardware = require('../classes/hardware.js');
 var moment = require("moment");
 var constants = require("../config/config.js");
@@ -28,11 +29,11 @@ exports.storageClass = (function () {
     
 
     var getBitcoinValue = function() {
-        return bitCoinsValue;
+        return bitCoinsValue.toFixed(4);
     };
 
     var getDollarValue = function(){
-        return dollarValue;
+        return dollarValue.toFixed(2);
     };
 
     var getStartCourse = function(){
@@ -96,7 +97,7 @@ exports.storageClass = (function () {
     }
 
     var getCourse = function (){
-        return course;
+        return course.toFixed(2);
     }
 
     var canUsdBeChanged = function(usd){
@@ -108,13 +109,24 @@ exports.storageClass = (function () {
             return false;
         }
     }
-    var changeBtcToUsd = function(usd,btc){
-        bitCoinsValue = bitCoinsValue - btc;
-        dollarValue = dollarValue + usd;
+    var changeBtcToUsd = function(btc) {
+        if (canBtcBeChanged(btc)) {
+            bitCoinsValue = bitCoinsValue - btc;
+            dollarValue = dollarValue + (course * btc);
+            redraw.redrawScreen.updateUSDAndBitcoins();
+        } else {
+            $('#btcError').fadeIn(constants.FADE_IN_TIME);
+        }
     }
-    var changeUsdToBtc = function(usd,btc){
-        dollarValue = dollarValue - usd;
-        bitCoinsValue = bitCoinsValue + btc;
+
+    var changeUsdToBtc = function(usd) {
+        if (canUsdBeChanged(usd)) {
+            dollarValue = dollarValue - usd;
+            bitCoinsValue = bitCoinsValue + (usd/course);
+            redraw.redrawScreen.updateUSDAndBitcoins();
+        } else {
+            $('#usdError').fadeIn(constants.FADE_IN_TIME);
+        }
     }
 
     var canBtcBeChanged = function(btc){
